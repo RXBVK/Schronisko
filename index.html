@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900&display=swap" rel="stylesheet">
+    <title> Schronisko dla Bezdomnych Zwierząt we Wrocławiu </title>
+</head>
+
+<body>
+    <div id="banner">
+        <div class="banner-logo">
+            <a href="index.html"><img src="images/logo-header3.png"></a>
+        </div>
+        <div class="banner-menu">
+            <a href="adopcja.html">Adopcja</a>
+            <a href="zwierzeta.html">Zwierzeta</a>
+            <a href="pomoc.html">Jak pomoc</a>
+            <a href="kampanie.html">Kampanie</a>
+            <a href="kontakt.html">Kontakt</a>
+        </div>
+    </div>
+    <div class="gradient">
+        <div class="gradient-content">
+            <div class="gradient-content-text">
+                <h1>Schronisko dla Bezdomnych Zwierząt we Wrocławiu</h1>
+                <p>Schronisko dla Bezdomnych Zwierząt we Wrocławiu powstało w 1962 roku. Założyli je, wkładając w to wielką pracę i entuzjazm działacze Towarzystwa Opieki nad Zwierzętami we Wrocławiu.</p>
+                <button type="button">WYŚWIETL <br> WIĘCEJ <br> INFORMACJI</button>
+            </div>
+            <div class="gradient-content-pic">
+                <img src="images/1.jpg">
+                <img src="images/2.jpg">
+                <img src="images/3.jpg">
+                <img src="images/4.jpg">
+                <img src="images/5.jpg">
+                <img src="images/6.jpg">
+            </div>
+
+        </div>
+        <!-- <img src="icons8-double-down-96%20(1).png" id="arrow"> -->
+        <img src="images/downarrow.png" id="downarrow">
+    </div>
+    <div class="white">
+        <h1>Proces adopcji</h1>
+        <div class="white-gallery">
+            <h3>Sprawdź galerię</h3>
+            <p>Przed przyjazdem zobacz w galerii jakie zwierzęta spotkasz w schronisku.</p>
+            <a href="galeria.html">ZOBACZ GALERIĘ</a>
+        </div>
+        <div class="white-contact">
+            <h3>Przyjedź do schroniska</h3>
+            <p>Po przejrzeniu galerii wiesz co ci się podoba, możesz przyjechać na miejsce i sprawdzić stan zwierząt oraz czy wybrane zwierzę ci pasuje.</p>
+            <a href="adres.html">KONTAKT</a>
+        </div>
+        <div class="white-documents">
+            <h3>Wypełnij dokumenty</h3>
+            <p>Do adopcji potrzebne jest wypełnienie dokumentów.</p>
+            <a href="dokumenty.html">POBIERZ DOKUMENTY</a>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-links">
+            <div class="footer-links-content">
+                <a href="index.html"><img src="images/logo-header3.png" id="img"></a>
+                <div class="footer-links-content-left">
+                    <p>Firma</p>
+                    <a href="informacja.html">Informacje</a>
+                    <a href="praca.html">Praca</a>
+                    <a href="kontakt.html">Kontakt</a>
+                </div>
+                <div class="footer-links-content-middle">
+                    <p>Społeczności</p>
+                    <a href="pracownicy.html">Pracownicy</a>
+                    <a href="sponsorzy.html">Sponsorzy</a>
+                    <a href="dostawcy.html">Dostawcy</a>
+                </div>
+                <div class="footer-links-content-right">
+                    <p>Nie wiem</p>
+                    <a href="cos1.html">Cos1</a>
+                    <a href="cos2.html">Cos2</a>
+                    <a href="cos3.html">Cos3</a>
+                </div>
+                <div class="footer-links-content-social">
+                    <a href="instagram.com"><img src="images/001-instagram-social-outlined-logo.png"></a>
+                    <a href="twitter.com"><img src="images/002-twitter-social-outlined-logo.png"></a>
+                    <a href="facebook.com"><img src="images/003-facebook-logo-outline.png"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-sponsors">
+            <a href="sponsorzy.html"><img src="images/sponsorzy.png"></a>
+            <a href="sponsorzy.html"><img src="images/sponsorzy1.png"></a>
+            <a href="sponsorzy.html"><img src="images/sponsorzy2.png"></a>
+            <a href="sponsorzy.html"><img src="images/sponsorzy3.png"></a>
+        </div>
+    </div>
+    <script>
+        window.onscroll = function() {
+            changeBg()
+        };
+
+        function changeBg() {
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                document.getElementById("banner").className = "scrolled";
+            } else {
+                document.getElementById("banner").className = "banner";
+            }
+        };
+
+    </script>
+</body>
+
+</html>
