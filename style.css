@@ -254,6 +254,7 @@
 .footer {
     background-color: black;
     height: 540px;
+    position: relative;
 }
 
 .footer-links {
@@ -344,8 +345,9 @@
 
 .footer-sponsors {
     display: flex;
-    padding-left: 58%;
-    padding-top: 10%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 
 .footer-sponsors img {
