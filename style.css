@@ -11,6 +11,7 @@
     background: linear-gradient(#bf80ff, #1a0033 70%);
 }
 
+
 #downarrow {
     height: 32px;
     position: absolute;
@@ -161,20 +162,58 @@
     margin: 0 auto;
     padding-top: 80px;
     height: 400px;
+    position: relative;
 }
 
+/*
 .white a {
+    display: block;
     color: rgba(29, 185, 84);
     font-weight: 700;
     text-decoration: none;
     font-size: 13px;
+    padding: 8px 0px;
     position: absolute;
-    bottom: -30%;
+    bottom: 0;
+}
+*/
+.white-gallery a {
+    display: block;
+    color: rgba(29, 185, 84);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 8px 0px;
+    position: absolute;
+    bottom: 0;
+}
+
+.white-contact a {
+    display: block;
+    color: rgba(29, 185, 84);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 8px 0px;
+    position: absolute;
+    bottom: 0;
+}
+
+.white-documents a {
+    display: block;
+    color: rgba(29, 185, 84);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 8px 0px;
+    position: absolute;
+    bottom: 0;
 }
 
 .white p {
     font-weight: 500;
     font-size: 13px;
+    margin-bottom: 16px;
 }
 
 .white h1 {
@@ -192,21 +231,24 @@
     padding-top: 45px;
     float: left;
     width: 33%;
-    height: 300px;
+    height: 200px;
+    position: relative;
 }
 
 .white-contact {
     padding-top: 45px;
     float: left;
     width: 33%;
-    height: 300px;
+    height: 200px;
+    position: relative;
 }
 
 .white-documents {
     padding-top: 45px;
     float: right;
     width: 33%;
-    height: 300px;
+    height: 200px;
+    position: relative;
 }
 
 .footer {
@@ -308,7 +350,8 @@
 
 .footer-sponsors img {
     padding: 30px 30px;
-    height: 40px;
+    height: 60px;
+    width: 130px;
 }
 
 
