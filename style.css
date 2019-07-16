@@ -11,8 +11,13 @@
     background: linear-gradient(#bf80ff, #1a0033 70%);
 }
 
+.gradient-button {
+    position: relative;
+    width: 100%;
+    height: 35px;
+}
 
-#downarrow {
+.gradient-button img {
     height: 32px;
     position: absolute;
     left: 50%;
@@ -129,6 +134,14 @@
     display: flex;
     flex-wrap: wrap;
     width: 65%;
+}
+
+.gradient-content-pic-st {
+    width: 100%;
+}
+
+.gradient-content-pic-nd {
+    width: 100%;
 }
 
 .gradient-content-pic img {
