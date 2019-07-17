@@ -33,13 +33,6 @@
     transition: background-color 200ms linear;
 }
 
-/** #nav {
-    background-color: transparent;
-    height: 100px;
-    width: 100%;
-    position: fixed;
-}
-**/
 .scrolled {
     background-color: rgba(0, 0, 0, 0.6);
     height: 100px;
@@ -126,10 +119,6 @@
     padding-left: 10%;
 }
 
-/* .pic {
-    width: 1200px;
-}
-*/
 .gradient-content-pic {
     display: flex;
     flex-wrap: wrap;
@@ -158,15 +147,6 @@
     background-color: black;
 }
 
-/*
-#arrow {
-    height: 32px;
-    width: 32px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-*/
 .white {
     width: 60%;
     margin: 0 auto;
@@ -175,18 +155,6 @@
     position: relative;
 }
 
-/*
-.white a {
-    display: block;
-    color: rgba(29, 185, 84);
-    font-weight: 700;
-    text-decoration: none;
-    font-size: 13px;
-    padding: 8px 0px;
-    position: absolute;
-    bottom: 0;
-}
-*/
 .white-gallery a,
 .white-contact a,
 .white-documents a {
@@ -199,7 +167,6 @@
     position: absolute;
     bottom: 0;
 }
-
 
 .white p {
     font-weight: 500;
@@ -327,10 +294,3 @@
     height: 60px;
     width: 130px;
 }
-
-
-/*
-przyciski pod procesem i sponsorzy
-ustawianie zdjęć po max 3 w rzędzie
-menu po zescrollowaniu z :hover
-*/
