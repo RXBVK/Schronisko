@@ -51,15 +51,6 @@ ul {
     position: absolute;
 }
 
-/*
-#banner > .banner-menu ul li,
-.banner > .banner-menu ul li {
-    list-style-type: none;
-    background-color: rgba(0, 0, 0, 0.3);
-    font-size: 12px;
-    width: 100%;
-}
-*/
 ol li {
     width: 150px;
 }
@@ -102,11 +93,6 @@ ol li:hover ul {
     display: block;
 }
 
-/*.listazr > ul > li {
-    list-style-type: none;
-    border: 1px solid black;
-}
-*/
 .scrolled {
     background-color: rgba(0, 0, 0, 0.6);
     height: 100px;
