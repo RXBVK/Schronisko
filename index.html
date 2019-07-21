@@ -2,22 +2,64 @@
 <html>
 
 <head>
+    <link rel="icon" href="Images/favicon.ico" type="image/x-icon" sizes="16x16">
+
     <link rel="stylesheet" href="style.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900&display=swap" rel="stylesheet">
     <title> Schronisko dla Bezdomnych Zwierząt we Wrocławiu </title>
 </head>
 
 <body>
+
     <div id="banner">
         <div class="banner-logo">
             <a href="index.html"><img src="Images/logo-header3.png"></a>
         </div>
         <div class="banner-menu">
-            <a href="adopcja.html">Adopcja</a>
+            <!-- <a href="adopcja.html">Adopcja</a>
             <a href="zwierzeta.html">Zwierzeta</a>
             <a href="pomoc.html">Jak pomoc</a>
             <a href="kampanie.html">Kampanie</a>
-            <a href="kontakt.html">Kontakt</a>
+            <a href="kontakt.html">Kontakt</a> -->
+            <ol>
+                <li><a href="adopcja.html">Adopcja</a>
+                    <div class="lista">
+                        <ul>
+                            <li><a href="poradnik.html">Poradnik</a></li>
+                            <li><a href="koszty.html">Koszty</a></li>
+                            <li><a href="warunki.html">Warunki</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="zwierzeta.html">Zwierzeta</a>
+                    <div class="lista">
+                        <ul>
+                            <li><a href="listazwierzat.html">Lista zwierząt</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="pomoc.html">Jak pomóc</a>
+                    <div class="lista">
+                        <ul>
+                            <li><a href="pomocmat.html">Pomoc materialna</a></li>
+                            <li><a href="pomocfin.html">Pomoc finansowa</a></li>
+                            <li><a href="wolontariat.html">Wolontariat</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="kampanie.html">Kampanie</a>
+                    <div class="lista">
+                        <ul>
+                            <li><a href="mydoroslepsy.html">"My, dorosłe psy"</a></li>
+                            <li><a href="niewidzialni.html">"Niewidzialni"</a></li>
+                            <li><a href="zeschronu.html">"Druga połówka"</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="kontakt.html">Kontakt</a>
+                </li>
+            </ol>
         </div>
     </div>
     <div class="gradient">
@@ -102,8 +144,10 @@
         function changeBg() {
             if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
                 document.getElementById("banner").className = "scrolled";
+                // document.getElementByClassName("lista").className = "listazr";
             } else {
                 document.getElementById("banner").className = "banner";
+                //document.getElementByClassName("lista").className = "lista"
             }
         };
 

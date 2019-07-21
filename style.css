@@ -22,7 +22,14 @@
     position: absolute;
     left: 50%;
     top: 73%;
-    transition: top 500ms linear;
+    transition: top 200ms linear;
+}
+
+.gradient-button img:hover {
+    height: 32px;
+    position: absolute;
+    left: 50%;
+    top: 100%;
 }
 
 .banner {
@@ -33,6 +40,73 @@
     transition: background-color 200ms linear;
 }
 
+
+ol {
+    display: flex;
+    list-style-type: none;
+    text-align: center;
+}
+
+ul {
+    position: absolute;
+}
+
+/*
+#banner > .banner-menu ul li,
+.banner > .banner-menu ul li {
+    list-style-type: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-size: 12px;
+    width: 100%;
+}
+*/
+ol li {
+    width: 150px;
+}
+
+ul li {
+    list-style-type: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-size: 12px;
+    width: 150px;
+    transition: 200ms linear;
+}
+
+ul li:hover {
+    list-style-type: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 15px;
+    width: 200px;
+}
+
+.scrolled ul li {
+    list-style-type: none;
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    width: 150px;
+}
+
+.scrolled ul li:hover {
+    list-style-type: none;
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: 15px;
+    width: 200px;
+}
+
+ol li ul {
+    display: none;
+    list-style-type: none;
+}
+
+ol li:hover ul {
+    display: block;
+}
+
+/*.listazr > ul > li {
+    list-style-type: none;
+    border: 1px solid black;
+}
+*/
 .scrolled {
     background-color: rgba(0, 0, 0, 0.6);
     height: 100px;
@@ -40,6 +114,7 @@
     position: fixed;
     transition: background-color 200ms linear;
 }
+
 
 .scrolled > .banner-menu a:hover {
     color: rgba(29, 185, 84);
