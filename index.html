@@ -9,7 +9,7 @@
     <title> Schronisko dla Bezdomnych Zwierząt we Wrocławiu </title>
 </head>
 
-<body>
+<body id="light-mode">
 
     <div id="banner">
         <div class="banner-logo">
@@ -50,6 +50,9 @@
                 </li>
                 <li>
                     <a href="kontakt.html">Kontakt</a>
+                    <div id="opcje">
+                        <p>Tryb nocny: </p><input type="checkbox" id="switch" onclick="nightMode()"><label for="switch">Tryb nocny</label>
+                    </div>
                 </li>
             </ol>
         </div>
@@ -79,22 +82,24 @@
             <img src="Images/downarrow.png" id="downarrow">
         </div>
     </div>
-    <div class="white">
-        <h1>Proces adopcji</h1>
-        <div class="white-gallery">
-            <h3>Sprawdź galerię</h3>
-            <p>Przed przyjazdem zobacz w galerii jakie zwierzęta spotkasz w schronisku.</p>
-            <a href="galeria.html">ZOBACZ GALERIĘ</a>
-        </div>
-        <div class="white-contact">
-            <h3>Przyjedź do schroniska</h3>
-            <p>Po przejrzeniu galerii wiesz co ci się podoba, możesz przyjechać na miejsce i sprawdzić stan zwierząt oraz czy wybrane zwierzę ci pasuje.</p>
-            <a href="adres.html">KONTAKT</a>
-        </div>
-        <div class="white-documents">
-            <h3>Wypełnij dokumenty</h3>
-            <p>Do adopcji potrzebne jest wypełnienie dokumentów.</p>
-            <a href="dokumenty.html">POBIERZ DOKUMENTY</a>
+    <div class="white-bg">
+        <div class="white">
+            <h1>Proces adopcji</h1>
+            <div class="white-gallery">
+                <h3>Sprawdź galerię</h3>
+                <p>Przed przyjazdem zobacz w galerii jakie zwierzęta spotkasz w schronisku.</p>
+                <a href="galeria.html">ZOBACZ GALERIĘ</a>
+            </div>
+            <div class="white-contact">
+                <h3>Przyjedź do schroniska</h3>
+                <p>Po przejrzeniu galerii wiesz co ci się podoba, możesz przyjechać na miejsce i sprawdzić stan zwierząt oraz czy wybrane zwierzę ci pasuje.</p>
+                <a href="adres.html">KONTAKT</a>
+            </div>
+            <div class="white-documents">
+                <h3>Wypełnij dokumenty</h3>
+                <p>Do adopcji potrzebne jest wypełnienie dokumentów.</p>
+                <a href="dokumenty.html">POBIERZ DOKUMENTY</a>
+            </div>
         </div>
     </div>
     <div class="footer">
@@ -130,14 +135,25 @@
     </div>
     <script>
         window.onscroll = function() {
-            changeBg()
+            changeBg();
         };
 
         function changeBg() {
-            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            if (document.documentElement.scrollTop > 50) {
                 document.getElementById("banner").className = "scrolled";
             } else {
                 document.getElementById("banner").className = "banner";
+            }
+        };
+
+        function nightMode() {
+            var isChecked = document.getElementById("switch").checked;
+            if (isChecked === true) {
+                //console.log("Tryb nocny");
+                document.getElementById("light-mode").className = "dark-mode";
+            } else {
+                //console.log("Tryb dzienny");
+                document.getElementById("light-mode").classList.remove("dark-mode");
             }
         };
 
