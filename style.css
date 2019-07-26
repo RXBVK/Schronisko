@@ -49,11 +49,7 @@ body {
     right: 30px;
     top: 30px;
     display: flex;
-}
-
-#opcje p {
-    line-height: 40px;
-    padding: 0 15px 0 15px;
+    flex-direction: column;
 }
 
 input[type=checkbox] {
@@ -422,6 +418,8 @@ ol li:hover ul {
 .dark-mode .white-bg {
     background-color: black;
     color: #8c8c8c;
+    border-top: 1px solid #8c8c8c;
+    border-bottom: 1px solid #8c8c8c;
 }
 
 .dark-mode .white-bg a {
@@ -459,4 +457,11 @@ ol li:hover ul {
 
 .dark-mode .scrolled {
     background-color: rgba(0, 0, 0, 0.8);
+}
+
+.datetime {
+    color: #8c8c8c;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
 }

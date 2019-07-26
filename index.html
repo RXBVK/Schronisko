@@ -51,8 +51,8 @@
                 <li>
                     <a href="kontakt.html">Kontakt</a>
                     <div id="opcje">
-                        <p>Dzień </p><input type="checkbox" id="switch" onclick="nightMode()"><label for="switch">Tryb nocny</label>
-                        <p>Noc</p>
+                        <input type="checkbox" id="switch" onclick="nightMode()"><label for="switch">Tryb nocny</label>
+                        <p id="savedDayTime">Dzień</p>
                     </div>
                 </li>
             </ol>
@@ -127,6 +127,10 @@
                 </div>
             </div>
         </div>
+        <div class="datetime">
+            <p id="data"></p>
+            <p id="godzina"></p>
+        </div>
         <div class="footer-sponsors">
             <a href="sponsorzy.html"><img src="Images/sponsorzy.png"></a>
             <a href="sponsorzy.html"><img src="Images/sponsorzy1.png"></a>
@@ -147,16 +151,82 @@
             }
         };
 
+        if (localStorage.getItem('localSwitch') === undefined || localStorage.getItem('localSwitch') === null) {
+            var date = new Date();
+            var time = date.getHours();
+            if (time >= 7 && time <= 20) {
+                document.getElementById("switch").checked = "";
+                nightMode();
+            } else {
+                document.getElementById("switch").checked = "checked";
+                nightMode();
+            };
+        };
+
         function nightMode() {
             var isChecked = document.getElementById("switch").checked;
             if (isChecked === true) {
                 //console.log("Tryb nocny");
                 document.getElementById("light-mode").className = "dark-mode";
+                document.getElementById("savedDayTime").innerHTML = "";
+                document.getElementById("savedDayTime").innerHTML = "Noc";
             } else {
                 //console.log("Tryb dzienny");
                 document.getElementById("light-mode").classList.remove("dark-mode");
+                document.getElementById("savedDayTime").innerHTML = "";
+                document.getElementById("savedDayTime").innerHTML = "Dzień";
             }
+
+            localStorage.setItem('localSwitch', isChecked);
         };
+
+
+        var mode = localStorage.getItem('localSwitch');
+        if (mode === "true") {
+            console.log('true');
+            document.getElementById("switch").checked = "checked";
+            nightMode();
+        } else {
+            document.getElementById("switch").checked = "";
+            console.log('false');
+            nightMode();
+        };
+
+        var date = new Date();
+        var day = date.getDate();
+        var month = new Array(11);
+        month[0] = "01";
+        month[1] = "02";
+        month[2] = "03";
+        month[3] = "04";
+        month[4] = "05";
+        month[5] = "06";
+        month[6] = "07";
+        month[7] = "08";
+        month[8] = "09";
+        month[9] = "10";
+        month[10] = "11";
+        month[11] = "12";
+        var year = date.getFullYear();
+        document.getElementById("data").innerHTML = "Dzisiejsza data: " + day + "-" + month[date.getMonth()] + "-" + year;
+
+        window.addEventListener("load", time);
+
+        function time() {
+            var date = new Date();
+            var hours = date.getHours();
+            var minutes = date.getMinutes();
+            var seconds = date.getSeconds();
+            if (minutes < 10) {
+                var minutes = "0" + date.getMinutes();
+            };
+            if (seconds < 10) {
+                var seconds = "0" + date.getSeconds();
+            };
+            document.getElementById("godzina").innerHTML = "Aktualna godzina: " + hours + ":" + minutes + ":" + seconds;
+        };
+
+        setInterval(time, 1000);
 
     </script>
 </body>
