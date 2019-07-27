@@ -139,6 +139,12 @@
             <a href="sponsorzy.html"><img src="Images/sponsorzy3.png"></a>
         </div>
     </div>
+    <div id="cookies">
+        <div id="cookies-content">
+            <p>Ta strona korzysta z ciasteczek, dalsze korzystanie z niej oznacza zgodę na ich używanie. </p>
+            <div id="button"><button onclick="closeCookies()">Zamknij</button></div>
+        </div>
+    </div>
     <script>
         //Labels 
         const actualTime = "Aktualna godzina: ";
@@ -208,6 +214,15 @@
             document.getElementById('locale').innerHTML = locale + navigator.language.toUpperCase();
         };
         setInterval(time, 1000);
+
+        function closeCookies() {
+            document.getElementById("cookies").className = "hidden";
+            localStorage.setItem('acceptCookies', "true");
+        };
+        var accept = localStorage.getItem('acceptCookies');
+        if (accept === "true") {
+            document.getElementById("cookies").className = "hidden";
+        }
 
     </script>
 </body>

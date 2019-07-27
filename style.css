@@ -441,6 +441,12 @@ ol li:hover ul {
     color: #8c8c8c;
 }
 
+.dark-mode #cookies {
+    background-color: black;
+    color: #8c8c8c;
+    border-top: 1px solid #8c8c8c;
+}
+
 .dark-mode .gradient-content-text button {
     background-color: #004d00;
     color: #8c8c8c;
@@ -464,4 +470,47 @@ ol li:hover ul {
     position: absolute;
     bottom: 20px;
     left: 20px;
+}
+
+.dark-mode #cookies-content button {
+    background-color: #404040;
+    color: black;
+}
+
+#cookies {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #404040;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 700;
+    height: 80px;
+    letter-spacing: 0.5px;
+    opacity: 0.95;
+    line-height: 80px;
+}
+
+#cookies-content {
+    display: flex;
+    justify-content: center;
+}
+
+#cookies-content p {
+    width: 75%;
+}
+
+#cookies-content button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 30px;
+    width: 150px;
+    font-weight: 700;
+}
+
+.hidden {
+    display: none;
 }
