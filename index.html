@@ -15,11 +15,6 @@
             <a href="index.html"><img src="Images/logo-header3.png"></a>
         </div>
         <div class="banner-menu">
-            <!-- <a href="adopcja.html">Adopcja</a>
-            <a href="zwierzeta.html">Zwierzeta</a>
-            <a href="pomoc.html">Jak pomoc</a>
-            <a href="kampanie.html">Kampanie</a>
-            <a href="kontakt.html">Kontakt</a> -->
             <ol>
                 <li><a href="adopcja.html" id="menu1">Adopcja</a>
                     <ul>
@@ -131,9 +126,18 @@
             </div>
         </div>
         <div class="datetime">
-            <p id="locale" id="format"></p>
-            <p id="data" id="date"></p>
-            <p id="godzina" id="time"></p>
+            <div class="datetimeinfo">
+                <p id="localeText"></p>
+                <p id="locale"></p>
+            </div>
+            <div class="datetimeinfo">
+                <p id="actualDateText"></p>
+                <p id="actualDate"></p>
+            </div>
+            <div class="datetimeinfo">
+                <p id="actualTimeText"></p>
+                <p id="actualTime"></p>
+            </div>
         </div>
         <div class="footer-sponsors">
             <a href="sponsorzy.html"><img src="Images/sponsorzy.png"></a>
@@ -144,15 +148,15 @@
     </div>
     <div id="cookies">
         <div id="cookies-content">
-            <p>Ta strona korzysta z ciasteczek, dalsze korzystanie z niej oznacza zgodę na ich używanie. </p>
-            <div id="button"><button onclick="closeCookies()">Zamknij</button></div>
+            <p id="cookies">Ta strona korzysta z ciasteczek, dalsze korzystanie z niej oznacza zgodę na ich używanie. </p>
+            <div id="button"><button onclick="closeCookies()" id="cookiesbutton">Zamknij</button></div>
         </div>
     </div>
     <script>
         //Labels 
         const actualTime = "Aktualna godzina: ";
         const actualDate = "Dzisiejsza data: ";
-        const locale = "Format dla: "
+        const locale = "Format dla: ";
         // end labels
         const languages = {
             pl: {
@@ -195,9 +199,11 @@
                 footerp3a1: "Cos1",
                 footerp3a2: "Cos2",
                 footerp3a3: "Cos3",
-                format: "Format dla:",
-                date: "Dzisiejsza data:",
-                time: "Aktualna godzina:",
+                localeText: "Format dla: ",
+                actualDateText: "Dzisiejsza data: ",
+                actualTimeText: "Aktualna godzina: ",
+                cookies: "Ta strona korzysta z ciasteczek, dalsze korzystanie z niej oznacza zgodę na ich używanie.",
+                cookiesbutton: "Zamknij",
             },
             en: {
                 menu1: "Adoption",
@@ -239,16 +245,26 @@
                 footerp3a1: "Smh1",
                 footerp3a2: "Smh2",
                 footerp3a3: "Smh3",
-                format: "Format for:",
-                date: "Date:",
-                time: "Actual time:",
+                localeText: "Format for: ",
+                actualDateText: "Date: ",
+                actualTimeText: "Current time: ",
+                cookies: "This site uses cookies, further use indicates your agreement.",
+                cookiesbutton: "Close",
             }
         }
 
-        const toBeTranslated = ["menu1", "menu2", "menu2", "menu3", "menu4", "menu5", "menu11", "menu12", "menu13", "menu21", "menu31", "menu32", "menu33", "gradienth1", "gradientp", "gradientbtn", "whiteh1", "whiteh21", "whiteh22", "whiteh23", "whitep1", "whitep2", "whitep3", "whitebtn1", "whitebtn2", "whitebtn3", "footerp1", "footerp2", "footerp3", "footerp1a1", "footerp1a2", "footerp1a3", "footerp2a1", "footerp2a2", "footerp2a3", "footerp3a1", "footerp3a2", "footerp3a3"];
+        const toBeTranslated = ["menu1", "menu2", "menu2", "menu3", "menu4", "menu5", "menu11", "menu12", "menu13", "menu21", "menu31", "menu32", "menu33", "gradienth1", "gradientp", "gradientbtn", "whiteh1", "whiteh21", "whiteh22", "whiteh23", "whitep1", "whitep2", "whitep3", "whitebtn1", "whitebtn2", "whitebtn3", "footerp1", "footerp2", "footerp3", "footerp1a1", "footerp1a2", "footerp1a3", "footerp2a1", "footerp2a2", "footerp2a3", "footerp3a1", "footerp3a2", "footerp3a3", "cookies", "localeText", "actualDateText", "actualTimeText"];
         window.onscroll = function() {
             changeBg();
         };
+        if (localStorage.getItem('language') === undefined || localStorage.getItem('language') === null) {
+            var deflang = navigator.language;
+            if (deflang !== "pl") {
+                changeLangEn();
+            } else {
+                changeLangPl();
+            }
+        }
 
         function changeBg() {
             if (document.documentElement.scrollTop > 50) {
@@ -275,11 +291,19 @@
             if (isChecked === true) {
                 document.getElementById("light-mode").className = "dark-mode";
                 document.getElementById("savedDayTime").innerHTML = "";
-                document.getElementById("savedDayTime").innerHTML = "Noc";
+                if (localStorage.getItem('language') === "PL") {
+                    document.getElementById("savedDayTime").innerHTML = "Noc";
+                } else {
+                    document.getElementById("savedDayTime").innerHTML = "Night";
+                }
             } else {
                 document.getElementById("light-mode").classList.remove("dark-mode");
                 document.getElementById("savedDayTime").innerHTML = "";
-                document.getElementById("savedDayTime").innerHTML = "Dzień";
+                if (localStorage.getItem('language') === "PL") {
+                    document.getElementById("savedDayTime").innerHTML = "Dzień";
+                } else {
+                    document.getElementById("savedDayTime").innerHTML = "Day";
+                }
             }
 
             localStorage.setItem('localSwitch', isChecked);
@@ -300,9 +324,9 @@
 
         function time() {
             var date = new Date();
-            document.getElementById("data").innerHTML = actualDate + date.toLocaleDateString();
-            document.getElementById("godzina").innerHTML = actualTime + date.toLocaleTimeString();
-            document.getElementById('locale').innerHTML = locale + navigator.language.toUpperCase();
+            document.getElementById("actualDate").innerHTML = date.toLocaleDateString();
+            document.getElementById("actualTime").innerHTML = date.toLocaleTimeString();
+            document.getElementById('locale').innerHTML = navigator.language.toUpperCase();
         };
         setInterval(time, 1000);
 
@@ -316,14 +340,12 @@
         };
 
 
-
-
-
         function changeLangPl() {
             document.getElementById("en").classList.remove("en");
             document.getElementById("pl").className = "pl";
             localStorage.setItem('language', "PL");
             translateAll(languages.pl);
+            nightMode();
         };
 
         function translateAll(targetLanguage) {
@@ -338,6 +360,7 @@
             document.getElementById("en").className = "en";
             localStorage.setItem('language', "EN");
             translateAll(languages.en);
+            nightMode();
         };
 
 

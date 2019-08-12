@@ -15,11 +15,6 @@
             <a href="index.html"><img src="Images/logo-header3.png"></a>
         </div>
         <div class="banner-menu">
-            <!-- <a href="adopcja.html">Adopcja</a>
-            <a href="zwierzeta.html">Zwierzeta</a>
-            <a href="pomoc.html">Jak pomoc</a>
-            <a href="kampanie.html">Kampanie</a>
-            <a href="kontakt.html">Kontakt</a> -->
             <ol>
                 <li><a href="adopcja.html">Adopcja</a>
                     <ul>
@@ -196,12 +191,10 @@
         function nightMode() {
             var isChecked = document.getElementById("switch").checked;
             if (isChecked === true) {
-                //console.log("Tryb nocny");
                 document.getElementById("light-mode").className = "dark-mode";
                 document.getElementById("savedDayTime").innerHTML = "";
                 document.getElementById("savedDayTime").innerHTML = "Noc";
             } else {
-                //console.log("Tryb dzienny");
                 document.getElementById("light-mode").classList.remove("dark-mode");
                 document.getElementById("savedDayTime").innerHTML = "";
                 document.getElementById("savedDayTime").innerHTML = "Dzień";

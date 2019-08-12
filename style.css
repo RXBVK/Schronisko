@@ -1,14 +1,3 @@
-/* .dark-mode {
-    --my-background-color: #0000ff;
-}
-
-.light-mode {
-    --my-background-color: #ff0000;
-}
-body {
-    background-color: var(--my-background-color);
-}
-*/
 * {
     padding: 0;
     margin: 0;
@@ -224,7 +213,7 @@ ol li:hover ul {
     border: 1px solid rgba(29, 185, 84);
     border-radius: 100px;
     font-weight: 700;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 .gradient-content-text button:hover {
@@ -474,6 +463,16 @@ ol li:hover ul {
     left: 20px;
 }
 
+.datetimeinfo {
+    display: flex;
+}
+
+#localeText,
+#actualDateText,
+#actualTimeText {
+    padding-right: 6px;
+}
+
 .dark-mode #cookies-content button {
     background-color: #404040;
     color: black;
@@ -574,6 +573,12 @@ ol li:hover ul {
     z-index: 2;
 }
 
+.zwierzeta-gallery img:hover {
+    z-index: 1;
+}
+
+
+
 .img-bg {
     position: relative;
     width: 300px;
@@ -581,6 +586,10 @@ ol li:hover ul {
     background-color: rgba(0, 0, 0, 0.7);
     margin: 50px 0 0 50px;
     z-index: 1;
+}
+
+.zwierzeta-gallery img:hover .img-bg {
+    z-index: 2;
 }
 
 .img-bg-content {
