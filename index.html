@@ -350,7 +350,6 @@
 
         function translateAll(targetLanguage) {
             for (var x of toBeTranslated) {
-                // console.log("cos1", targetLanguage[x], x, document.getElementById(x));
                 document.getElementById(x).textContent = targetLanguage[x];
             }
         };
@@ -372,29 +371,7 @@
 
         var arrow = true;
         var downarrow = document.getElementById("downarrow");
-        /*
-                function moveArrowDown() {
-                    var i = 90;
-                    for (i; i <= 110; i++) {
-                        downarrow.style.top = i + '%';
-                        console.log(i);
-                    }
-                    var arrow = false;
-                    console.log(arrow);
-                    setTimeout('moveArrowUp();', 500);
-                }
 
-                function moveArrowUp() {
-                    var i = 110;
-                    for (i; i >= 90; i--) {
-                        downarrow.style.top = i + '%';
-                        console.log(i);
-                    }
-                    var arrow = true;
-                    console.log(arrow);
-                    setTimeout('moveArrowDown();', 500);
-                }
-        */
         function moveArrowDown() {
             document.getElementById("downarrow").classList.remove("downarrowUp");
             downarrow.className = "downarrowDown";
@@ -416,11 +393,10 @@
                 moveArrowUp();
             }
         }
-        //pobieranie wysokości
+
         function scrollDown() {
             var heightGradient = document.getElementById("gradient").offsetHeight;
             var heightBanner = document.getElementById("banner-logo").offsetHeight;
-            console.log(heightBanner);
             window.scrollTo({
                 top: heightGradient - heightBanner,
                 behavior: 'smooth'
