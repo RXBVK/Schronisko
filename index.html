@@ -11,7 +11,7 @@
 <body id="light-mode">
 
     <div id="banner">
-        <div class="banner-logo">
+        <div class="banner-logo" id="banner-logo">
             <a href="index.html"><img src="Images/logo-header3.png"></a>
         </div>
         <div class="banner-menu">
@@ -56,7 +56,7 @@
             </ol>
         </div>
     </div>
-    <div class="gradient">
+    <div class="gradient" id="gradient">
         <div class="gradient-content">
             <div class="gradient-content-text">
                 <h1 id="gradienth1">Schronisko dla Bezdomnych Zwierząt we Wrocławiu</h1>
@@ -78,7 +78,7 @@
 
         </div>
         <div class="gradient-button">
-            <img src="Images/downarrow.png" id="downarrow">
+            <img src="Images/arrow-207-32.png" id="downarrow" class="downarrowUp" onclick="scrollDown()">
         </div>
     </div>
     <div class="white-bg">
@@ -154,10 +154,6 @@
     </div>
     <script>
         //Labels 
-        const actualTime = "Aktualna godzina: ";
-        const actualDate = "Dzisiejsza data: ";
-        const locale = "Format dla: ";
-        // end labels
         const languages = {
             pl: {
                 menu1: "Adopcja",
@@ -179,7 +175,7 @@
                 gradientbtn: "Wyświetl więcej informacji",
                 whiteh1: "Proces adopcji",
                 whiteh21: "Sprawdź galerię",
-                whiteh22: "Przyjedź do schorniska",
+                whiteh22: "Przyjedź do schroniska",
                 whiteh23: "Wypełnij dokumenty",
                 whitep1: "Przed przyjazdem zobacz w galerii jakie zwierzęta spotkasz w schronisku.",
                 whitep2: "Po przejrzeniu galerii wiesz co ci się podoba, możesz przyjechać na miejsce i sprawdzić stan zwierząt oraz czy wybrane zwierzę ci pasuje.",
@@ -254,9 +250,13 @@
         }
 
         const toBeTranslated = ["menu1", "menu2", "menu2", "menu3", "menu4", "menu5", "menu11", "menu12", "menu13", "menu21", "menu31", "menu32", "menu33", "gradienth1", "gradientp", "gradientbtn", "whiteh1", "whiteh21", "whiteh22", "whiteh23", "whitep1", "whitep2", "whitep3", "whitebtn1", "whitebtn2", "whitebtn3", "footerp1", "footerp2", "footerp3", "footerp1a1", "footerp1a2", "footerp1a3", "footerp2a1", "footerp2a2", "footerp2a3", "footerp3a1", "footerp3a2", "footerp3a3", "cookies", "localeText", "actualDateText", "actualTimeText"];
+        // end labels
         window.onscroll = function() {
             changeBg();
         };
+        window.onload = function() {
+            moveArrow();
+        }
         if (localStorage.getItem('language') === undefined || localStorage.getItem('language') === null) {
             var deflang = navigator.language;
             if (deflang !== "pl") {
@@ -350,7 +350,7 @@
 
         function translateAll(targetLanguage) {
             for (var x of toBeTranslated) {
-                console.log("cos1", targetLanguage[x], x, document.getElementById(x));
+                // console.log("cos1", targetLanguage[x], x, document.getElementById(x));
                 document.getElementById(x).textContent = targetLanguage[x];
             }
         };
@@ -363,15 +363,69 @@
             nightMode();
         };
 
-
-
-
         var language = localStorage.getItem('language');
         if (language === "EN") {
             changeLangEn();
         } else {
             changeLangPl();
         };
+
+        var arrow = true;
+        var downarrow = document.getElementById("downarrow");
+        /*
+                function moveArrowDown() {
+                    var i = 90;
+                    for (i; i <= 110; i++) {
+                        downarrow.style.top = i + '%';
+                        console.log(i);
+                    }
+                    var arrow = false;
+                    console.log(arrow);
+                    setTimeout('moveArrowUp();', 500);
+                }
+
+                function moveArrowUp() {
+                    var i = 110;
+                    for (i; i >= 90; i--) {
+                        downarrow.style.top = i + '%';
+                        console.log(i);
+                    }
+                    var arrow = true;
+                    console.log(arrow);
+                    setTimeout('moveArrowDown();', 500);
+                }
+        */
+        function moveArrowDown() {
+            document.getElementById("downarrow").classList.remove("downarrowUp");
+            downarrow.className = "downarrowDown";
+            var arrow = false;
+            setTimeout('moveArrowUp();', 500);
+        }
+
+        function moveArrowUp() {
+            document.getElementById("downarrow").classList.remove("downarrowDown");
+            downarrow.className = "downarrowUp";
+            var arrow = true;
+            setTimeout('moveArrowDown();', 500);
+        }
+
+        function moveArrow() {
+            if (arrow) {
+                moveArrowDown()
+            } else {
+                moveArrowUp();
+            }
+        }
+        //pobieranie wysokości
+        function scrollDown() {
+            var heightGradient = document.getElementById("gradient").offsetHeight;
+            var heightBanner = document.getElementById("banner-logo").offsetHeight;
+            console.log(heightBanner);
+            window.scrollTo({
+                top: heightGradient - heightBanner,
+                behavior: 'smooth'
+            })
+        }
 
     </script>
 </body>

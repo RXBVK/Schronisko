@@ -10,8 +10,8 @@
 </head>
 
 <body>
-    <div id="banner">
-        <div class="banner-logo">
+    <div id="banner" class="scrolled">
+        <div class="banner-logo" id="banner-logo">
             <a href="index.html"><img src="Images/logo-header3.png"></a>
         </div>
         <div class="banner-menu">
@@ -53,128 +53,152 @@
         </div>
     </div>
     <div class="zwierzeta-header">
+        <div class="zwierzeta-header-content">
+            Galeria zwierząt
+        </div>
     </div>
-    <div class="zwierzeta-gallery">
-        <div class="one" onmouseover="mouseOver()" onmouseout="mouseOut()">
-            <img src="Images/1.jpg" id="oneh" class="img">
+    <div class="filter">
+        <div class="filter-content">
+            <div class="filter-options">
+                Psy <input type="checkbox" id="dogs" onclick="filtruj()">
+                Koty <input type="checkbox" id="cats" onclick="filtruj()">
+            </div>
+            <div class="search">
+                Wpisz imię: <input type="text" id="imie">
+            </div>
+        </div>
+    </div>
+    <div class="zwierzeta-gallery" id="gallery">
+        <div id="barney" class="cat">
+            <img src="Images/1.jpg" class="img">
             <div class="img-bg">
                 <div class="img-bg-content">
-                    <div id="img-bg-content-imie">Tu jakieś imię</div>
-                    <div id="img-bg-content-wiek"> Wiek: tu jakiś wiek</div>
+                    <div id="img-bg-content-imie">BARNEY</div>
+                    <div id="img-bg-content-wiek"> Wiek: 3 lata</div>
                 </div>
             </div>
         </div>
-        <div id="two" onmouseover="mouseOver()" onmouseout="mouseOut()">
-            <img src="Images/2.jpg" id="twoh" class="img">
+        <div id="barry" class="dog">
+            <img src="Images/2.jpg" class="img">
             <div class="img-bg">
                 <div class="img-bg-content">
-                    <div id="img-bg-content-imie">Tu jakieś imię</div>
-                    <div id="img-bg-content-wiek"> Wiek: tu jakiś wiek</div>
+                    <div id="img-bg-content-imie">BARRY</div>
+                    <div id="img-bg-content-wiek"> Wiek: 8 lat</div>
                 </div>
             </div>
         </div>
-        <div id="three" onmouseover="mouseOver()" onmouseout="mouseOut()">
+        <div id="goofy" class="dog">
             <img src="Images/3.jpg" class="img">
             <div class="img-bg">
                 <div class="img-bg-content">
-                    <div id="img-bg-content-imie">Tu jakieś imię</div>
-                    <div id="img-bg-content-wiek"> Wiek: tu jakiś wiek</div>
+                    <div id="img-bg-content-imie">GOOFY</div>
+                    <div id="img-bg-content-wiek"> Wiek: 2 lata</div>
                 </div>
             </div>
         </div>
-        <div id="four" onmouseover="mouseOver()" onmouseout="mouseOut()">
+        <div id="benji" class="dog">
             <img src="Images/4.jpg" class="img">
             <div class="img-bg">
                 <div class="img-bg-content">
-                    <div id="img-bg-content-imie">Tu jakieś imię</div>
-                    <div id="img-bg-content-wiek"> Wiek: tu jakiś wiek</div>
+                    <div id="img-bg-content-imie">BENJI</div>
+                    <div id="img-bg-content-wiek"> Wiek: 10 lat</div>
                 </div>
             </div>
         </div>
-        <div id="five" onmouseover="mouseOver()" onmouseout="mouseOut()">
+        <div id="boo" class="dog">
             <img src="Images/5.jpg" class="img">
             <div class="img-bg">
                 <div class="img-bg-content">
-                    <div id="img-bg-content-imie">Tu jakieś imię</div>
-                    <div id="img-bg-content-wiek"> Wiek: tu jakiś wiek</div>
+                    <div id="img-bg-content-imie">BOO</div>
+                    <div id="img-bg-content-wiek"> Wiek: 9 lat</div>
                 </div>
             </div>
         </div>
-        <div id="six" onmouseover="mouseOver()" onmouseout="mouseOut()">
+        <div id="max" class="dog">
             <img src="Images/6.jpg" class="img">
             <div class="img-bg">
                 <div class="img-bg-content">
-                    <div id="img-bg-content-imie">Tu jakieś imię</div>
-                    <div id="img-bg-content-wiek"> Wiek: tu jakiś wiek</div>
+                    <div id="img-bg-content-imie">MAX</div>
+                    <div id="img-bg-content-wiek"> Wiek: 13 lat</div>
                 </div>
             </div>
         </div>
-        <div id="seven" onmouseover="mouseOver()" onmouseout="mouseOut()">
+        <div id="charlie" class="dog">
             <img src="Images/7.jpg" class="img">
             <div class="img-bg">
                 <div class="img-bg-content">
-                    <div id="img-bg-content-imie">Tu jakieś imię</div>
-                    <div id="img-bg-content-wiek"> Wiek: tu jakiś wiek</div>
+                    <div id="img-bg-content-imie">CHARLIE</div>
+                    <div id="img-bg-content-wiek"> Wiek: 6 lat</div>
                 </div>
             </div>
         </div>
-        <div id="eight" onmouseover="mouseOver()" onmouseout="mouseOut()">
+        <div id="molly" class="cat">
             <img src="Images/8.jpg" class="img">
             <div class="img-bg">
                 <div class="img-bg-content">
-                    <div id="img-bg-content-imie">Tu jakieś imię</div>
-                    <div id="img-bg-content-wiek"> Wiek: tu jakiś wiek</div>
+                    <div id="img-bg-content-imie">MOLLY</div>
+                    <div id="img-bg-content-wiek"> Wiek: 1 rok</div>
                 </div>
             </div>
         </div>
-        <div id="nine" onmouseover="mouseOver()" onmouseout="mouseOut()">
+        <div id="jack" class="cat">
             <img src="Images/9.jpg" class="img">
             <div class="img-bg">
                 <div class="img-bg-content">
-                    <div id="img-bg-content-imie">Tu jakieś imię</div>
-                    <div id="img-bg-content-wiek"> Wiek: tu jakiś wiek</div>
+                    <div id="img-bg-content-imie">JACK</div>
+                    <div id="img-bg-content-wiek"> Wiek: 8 lat</div>
                 </div>
             </div>
         </div>
-        <div id="ten" onmouseover="mouseOver()" onmouseout="mouseOut()">
+        <div id="ruby" class="cat">
             <img src="Images/10.jpg" class="img">
             <div class="img-bg">
                 <div class="img-bg-content">
-                    <div id="img-bg-content-imie">Tu jakieś imię</div>
-                    <div id="img-bg-content-wiek"> Wiek: tu jakiś wiek</div>
+                    <div id="img-bg-content-imie">RUBY</div>
+                    <div id="img-bg-content-wiek"> Wiek: 2 lata</div>
                 </div>
             </div>
         </div>
-        <div id="eleven" onmouseover="mouseOver()" onmouseout="mouseOut()">
+        <div id="toby" class="cat">
             <img src="Images/11.jpg" class="img">
             <div class="img-bg">
                 <div class="img-bg-content">
-                    <div id="img-bg-content-imie">Tu jakieś imię</div>
-                    <div id="img-bg-content-wiek"> Wiek: tu jakiś wiek</div>
+                    <div id="img-bg-content-imie">TOBY</div>
+                    <div id="img-bg-content-wiek"> Wiek: 3 miesiące</div>
                 </div>
             </div>
         </div>
-        <div id="twelve" onmouseover="mouseOver()" onmouseout="mouseOut()">
+        <div id="bailey" class="cat">
             <img src="Images/12.jpg" class="img">
             <div class="img-bg">
                 <div class="img-bg-content">
-                    <div id="img-bg-content-imie">Tu jakieś imię</div>
-                    <div id="img-bg-content-wiek"> Wiek: tu jakiś wiek</div>
+                    <div id="img-bg-content-imie">BAILEY</div>
+                    <div id="img-bg-content-wiek"> Wiek: 4 lata</div>
                 </div>
             </div>
         </div>
     </div>
     <script>
+        const names = ["barney", "barry", "goofy", "benji", "boo", "max", "charlie", "molly", "jack", "ruby", "toby", "bailey"];
+        const namesDogs = ["barry", "goofy", "benji", "boo", "max", "charlie", ];
+        const namesCats = ["barney", "molly", "jack", "ruby", "toby", "bailey"];
         window.onscroll = function() {
             changeBg();
         };
+        window.onload = function() {
+            checkedFilter();
+        }
+        document.getElementById("imie").onkeyup = function() {
+            searchOnKey();
+        }
 
         function changeBg() {
-            if (document.documentElement.scrollTop > 50) {
-                document.getElementById("banner").className = "scrolled";
+            if (document.documentElement.scrollTop > 0) {
+                document.getElementById("banner").style.display = "none";
             } else {
-                document.getElementById("banner").className = "banner";
+                document.getElementById("banner").style.display = "block";
             }
+
         };
         if (localStorage.getItem('localSwitch') === undefined || localStorage.getItem('localSwitch') === null) {
             var date = new Date();
@@ -205,22 +229,82 @@
 
         var mode = localStorage.getItem('localSwitch');
         if (mode === "true") {
-            console.log('true');
             document.getElementById("switch").checked = "checked";
             nightMode();
         } else {
             document.getElementById("switch").checked = "";
-            console.log('false');
             nightMode();
         };
 
-        function mouseOver() {
-            document.getElementById("oneh").style.zIndex = "1";
+        function checkedFilter() {
+            document.getElementById("dogs").checked = true;
+            document.getElementById("cats").checked = true;
+        }
+
+        function filtruj() {
+            var dogschecked = document.getElementById("dogs").checked;
+            var catschecked = document.getElementById("cats").checked;
+            if (document.getElementById("imie").value.length === 0) {
+                if (dogschecked === true && catschecked === true) {
+                    for (var i = 0; i < names.length; i++) {
+                        document.getElementById(names[i]).style.display = "block";
+                    }
+                } else if (dogschecked === true && catschecked === false) {
+                    for (var i = 0; i < namesDogs.length; i++) {
+                        document.getElementById(namesDogs[i]).style.display = "block";
+                        document.getElementById(namesCats[i]).style.display = "none";
+                    }
+                } else if (dogschecked === false && catschecked === true) {
+                    for (var i = 0; i < namesCats.length; i++) {
+                        document.getElementById(namesCats[i]).style.display = "block";
+                        document.getElementById(namesDogs[i]).style.display = "none";
+                    }
+                } else if (dogschecked === false && catschecked === false) {
+                    for (var i = 0; i < names.length; i++) {
+                        document.getElementById(names[i]).style.display = "none";
+                    }
+                }
+            } else {
+                searchOnKey();
+            }
         };
 
-        function mouseOut() {
-            document.getElementById("oneh").style.zIndex = "2";
-        };
+        function searchOnKey() {
+            var dogschecked = document.getElementById("dogs").checked;
+            var catschecked = document.getElementById("cats").checked;
+            var name = document.getElementById("imie").value;
+            var properName = name.toLowerCase();
+
+            function check(singleName) {
+                return singleName.startsWith(properName);
+            };
+            if (check.length > 0) {
+                for (var i = 0; i < names.length; i++) {
+                    document.getElementById(names[i]).style.display = "none";
+                }
+                if (dogschecked === true && catschecked === true) {
+                    for (var i = 0; i < names.filter(check).length; i++) {
+                        document.getElementById(names.filter(check)[i]).style.display = "block";
+                    }
+                } else if (dogschecked === true && catschecked === false) {
+                    for (var i = 0; i < namesDogs.filter(check).length; i++) {
+                        document.getElementById(namesDogs.filter(check)[i]).style.display = "block";
+                    }
+                } else if (dogschecked === false && catschecked === true) {
+                    for (var i = 0; i < namesCats.filter(check).length; i++) {
+                        document.getElementById(namesCats.filter(check)[i]).style.display = "block";
+                    }
+                } else if (dogschecked === false && catschecked === false) {
+                    for (var i = 0; i < names.filter(check).length; i++) {
+                        document.getElementById(names.filter(check)[i]).style.display = "none";
+                    }
+                }
+            } else {
+                for (var i = 0; i < names.length; i++) {
+                    document.getElementById(names.filter(check)[i]).style.display = "none";
+                }
+            }
+        }
 
     </script>
 </body>

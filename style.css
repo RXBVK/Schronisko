@@ -12,24 +12,26 @@
 }
 
 .gradient-button {
-    position: relative;
-    width: 100%;
+    width: 32px;
     height: 35px;
+    margin: 40px auto 0 auto;
 }
 
-.gradient-button img {
-    height: 32px;
-    position: absolute;
-    left: 50%;
-    top: 73%;
-    transition: top 200ms linear;
+
+
+.downarrowDown {
+    cursor: pointer;
+    transform: translateY(20%);
+    transition: transform 900ms ease-in-out;
+    will-change: transform;
+
 }
 
-.gradient-button img:hover {
-    height: 32px;
-    position: absolute;
-    left: 50%;
-    top: 100%;
+.downarrowUp {
+    cursor: pointer;
+    transform: none;
+    transition: transform 900ms ease-in-out;
+    will-change: transform;
 }
 
 #opcje {
@@ -157,6 +159,7 @@ ol li:hover ul {
 .banner-logo {
     float: left;
     width: 40%;
+    height: 100px;
 }
 
 .banner-logo img {
@@ -308,7 +311,7 @@ ol li:hover ul {
 
 .footer {
     background-color: black;
-    height: 540px;
+    height: 390px;
     position: relative;
 }
 
@@ -545,7 +548,7 @@ ol li:hover ul {
 }
 
 .zwierzeta-header {
-    height: 400px;
+    height: 250px;
     width: 100%;
     background: linear-gradient(#bf80ff, #1a0033 70%);
 }
@@ -578,7 +581,6 @@ ol li:hover ul {
 }
 
 
-
 .img-bg {
     position: relative;
     width: 300px;
@@ -588,7 +590,7 @@ ol li:hover ul {
     z-index: 1;
 }
 
-.zwierzeta-gallery img:hover .img-bg {
+.img-bg:hover {
     z-index: 2;
 }
 
@@ -605,4 +607,39 @@ ol li:hover ul {
 #img-bg-content-imie {
     padding-bottom: 20px;
     font-weight: 700;
+    font-size: 20px;
+}
+
+.filter {
+    border-bottom: 1px solid black;
+    height: 30px;
+    line-height: 30px;
+}
+
+.filter-content {
+    display: flex;
+    width: 60%;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.filter-options input[type=checkbox] {
+    visibility: visible;
+    height: auto;
+    width: auto;
+}
+
+.search {
+    padding-left: 60px;
+}
+
+.zwierzeta-header-content {
+    text-align: center;
+    line-height: normal;
+    height: 250px;
+    line-height: 250px;
+    color: white;
+    font-size: 60px;
+    padding-top: 45px;
+    letter-spacing: 10px;
 }
