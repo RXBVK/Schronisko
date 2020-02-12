@@ -1,46 +1,36 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <link
+      rel="icon"
+      href="Images/favicon.ico"
+      type="image/x-icon"
+      sizes="16x16"
+    />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <title>Schronisko dla Bezdomnych Zwierząt we Wrocławiu</title>
+  </head>
 
-<head>
-    <link rel="icon" href="Images/favicon.ico" type="image/x-icon" sizes="16x16">
-    <link rel="stylesheet" href="style.css" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900&display=swap" rel="stylesheet">
-    <title> Schronisko dla Bezdomnych Zwierząt we Wrocławiu </title>
-</head>
-
-<body id="light-mode">
-
-    <div id="banner">
-        <div class="banner-logo" id="banner-logo">
-            <a href="index.html"><img src="Images/logo-header3.png"></a>
-        </div>
-        <div class="banner-menu">
-            <ol>
+  <body id="light-mode">
+    <div id="banner" class="banner">
+      <div class="banner-logo" id="banner-logo">
+        <a href="index.html"><img src="Images/logo-header3.png"/></a>
+      </div>
+      <div class="banner-menu">
+        <!--<ol>
                 <li><a href="adopcja.html" id="menu1">Adopcja</a>
-                    <ul>
-                        <li><a href="poradnik.html" id="menu11">Poradnik</a></li>
-                        <li><a href="koszty.html" id="menu12">Koszty</a></li>
-                        <li><a href="warunki.html" id="menu13">Warunki</a></li>
-                    </ul>
                 </li>
                 <li><a href="zwierzeta.html" id="menu2">Zwierzeta</a>
-                    <ul>
-                        <li><a href="listazwierzat.html" id="menu21">Lista zwierząt</a></li>
-                    </ul>
                 </li>
                 <li><a href="pomoc.html" id="menu3">Jak pomóc</a>
-                    <ul>
-                        <li><a href="pomocmat.html" id="menu31">Pomoc materialna</a></li>
-                        <li><a href="pomocfin.html" id="menu32">Pomoc finansowa</a></li>
-                        <li><a href="wolontariat.html" id="menu33">Wolontariat</a></li>
-                    </ul>
                 </li>
                 <li><a href="kampanie.html" id="menu4">Kampanie</a>
-                    <ul>
-                        <li><a href="mydoroslepsy.html" id="menu41">"My, dorosłe psy"</a></li>
-                        <li><a href="niewidzialni.html" id="menu42">"Niewidzialni"</a></li>
-                        <li><a href="zeschronu.html" id="menu43">"Druga połówka"</a></li>
-                    </ul>
                 </li>
                 <li>
                     <a href="kontakt.html" id="menu5">Kontakt</a>
@@ -54,356 +44,574 @@
                     </div>
                 </li>
             </ol>
+-->
+        <ol>
+          <li>
+            <a href="adopcja.html" id="menu1">Adopcja</a>
+            <ul>
+              <li><a href="poradnik.html" id="menu11">Poradnik</a></li>
+              <li><a href="koszty.html" id="menu12">Koszty</a></li>
+              <li><a href="warunki.html" id="menu13">Warunki</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="zwierzeta.html" id="menu2">Zwierzeta</a>
+            <ul>
+              <li>
+                <a href="listazwierzat.html" id="menu21">Lista zwierząt</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="pomoc.html" id="menu3">Jak pomóc</a>
+            <ul>
+              <li><a href="pomocmat.html" id="menu31">Pomoc materialna</a></li>
+              <li><a href="pomocfin.html" id="menu32">Pomoc finansowa</a></li>
+              <li><a href="wolontariat.html" id="menu33">Wolontariat</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="kampanie.html" id="menu4">Kampanie</a>
+            <ul>
+              <li>
+                <a href="mydoroslepsy.html" id="menu41">"My, dorosłe psy"</a>
+              </li>
+              <li>
+                <a href="niewidzialni.html" id="menu42">"Niewidzialni"</a>
+              </li>
+              <li><a href="zeschronu.html" id="menu43">"Druga połówka"</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="kontakt.html" id="menu5">Kontakt</a>
+            <div id="language">
+              <p onclick="changeLangPl()" id="pl">PL</p>
+              <p onclick="changeLangEn()" id="en">EN</p>
+            </div>
+            <div id="opcje">
+              <input type="checkbox" id="switch" onclick="nightMode()" /><label
+                for="switch"
+                >Tryb nocny</label
+              >
+              <p id="savedDayTime">Dzień</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+      <div id="menu-icon">
+        <img src="Images/menu-icon.png" onclick="openMobileMenu()" />
+      </div>
+    </div>
+    <div id="mobileMenu">
+      <div id="mobileMenuContent" style="display: none">
+        <ol>
+          <li>
+            <a href="adopcja.html" id="menu1">Adopcja</a>
+          </li>
+          <li>
+            <a href="zwierzeta.html" id="menu2">Zwierzeta</a>
+          </li>
+          <li>
+            <a href="pomoc.html" id="menu3">Jak pomóc</a>
+          </li>
+          <li>
+            <a href="kampanie.html" id="menu4">Kampanie</a>
+          </li>
+          <li>
+            <a href="kontakt.html" id="menu5">Kontakt</a>
+          </li>
+        </ol>
+        <div id="language">
+          <p onclick="changeLangPl()" id="pl">PL</p>
+          <p onclick="changeLangEn()" id="en">EN</p>
         </div>
+        <div id="opcje">
+          <p id="savedDayTime">Dzień</p>
+          <input type="checkbox" id="switch" onclick="nightMode()" /><label
+            for="switch"
+            >Tryb nocny</label
+          >
+        </div>
+      </div>
     </div>
     <div class="gradient" id="gradient">
-        <div class="gradient-content">
-            <div class="gradient-content-text">
-                <h1 id="gradienth1">Schronisko dla Bezdomnych Zwierząt we Wrocławiu</h1>
-                <p id="gradientp">Schronisko dla Bezdomnych Zwierząt we Wrocławiu powstało w 1962 roku. Założyli je, wkładając w to wielką pracę i entuzjazm działacze Towarzystwa Opieki nad Zwierzętami we Wrocławiu.</p>
-                <button type="button" id="gradientbtn">WYŚWIETL <br> WIĘCEJ <br> INFORMACJI</button>
-            </div>
-            <div class="gradient-content-pic">
-                <div class="gradient-content-pic-st">
-                    <img src="Images/1.jpg">
-                    <img src="Images/2.jpg">
-                    <img src="Images/3.jpg">
-                </div>
-                <div class="gradient-content-pic-nd">
-                    <img src="Images/4.jpg">
-                    <img src="Images/5.jpg">
-                    <img src="Images/6.jpg">
-                </div>
-            </div>
-
+      <div class="gradient-content">
+        <div class="gradient-content-text">
+          <h1 id="gradienth1">
+            Schronisko dla Bezdomnych Zwierząt we Wrocławiu
+          </h1>
+          <p id="gradientp">
+            Schronisko dla Bezdomnych Zwierząt we Wrocławiu powstało w 1962
+            roku. Założyli je, wkładając w to wielką pracę i entuzjazm działacze
+            Towarzystwa Opieki nad Zwierzętami we Wrocławiu.
+          </p>
+          <button type="button" id="gradientbtn">
+            WYŚWIETL WIĘCEJ INFORMACJI
+          </button>
         </div>
-        <div class="gradient-button">
-            <img src="Images/arrow-207-32.png" id="downarrow" class="downarrowUp" onclick="scrollDown()">
+        <div class="gradient-content-pic" id="pics-contener">
+          <!----
+                <img src="Images/1.jpg">
+                <img src="Images/2.jpg">
+                <img src="Images/3.jpg">
+                <img src="Images/4.jpg">
+                <img src="Images/5.jpg">
+                <img src="Images/6.jpg">
+                -->
         </div>
+      </div>
+      <div class="gradient-button">
+        <img
+          src="Images/arrow-207-32.png"
+          id="downarrow"
+          class="downarrowUp"
+          onclick="scrollDown()"
+        />
+      </div>
     </div>
     <div class="white-bg">
-        <div class="white">
-            <h1 id="whiteh1">Proces adopcji</h1>
-            <div class="white-gallery">
-                <h3 id="whiteh21">Sprawdź galerię</h3>
-                <p id="whitep1">Przed przyjazdem zobacz w galerii jakie zwierzęta spotkasz w schronisku.</p>
-                <a href="zwierzeta.html" id="whitebtn1">ZOBACZ GALERIĘ</a>
-            </div>
-            <div class="white-contact">
-                <h3 id="whiteh22">Przyjedź do schroniska</h3>
-                <p id="whitep2">Po przejrzeniu galerii wiesz co ci się podoba, możesz przyjechać na miejsce i sprawdzić stan zwierząt oraz czy wybrane zwierzę ci pasuje.</p>
-                <a href="adres.html" id="whitebtn2">KONTAKT</a>
-            </div>
-            <div class="white-documents">
-                <h3 id="whiteh23">Wypełnij dokumenty</h3>
-                <p id="whitep3">Do adopcji potrzebne jest wypełnienie dokumentów.</p>
-                <a href="dokumenty.html" id="whitebtn3">POBIERZ DOKUMENTY</a>
-            </div>
+      <div class="white">
+        <h1 id="whiteh1">Proces adopcji</h1>
+        <div id="white-columns">
+          <div class="white-gallery fromLeft" id="white-gallery">
+            <h3 id="whiteh21">Sprawdź galerię</h3>
+            <p id="whitep1">
+              Przed przyjazdem zobacz w galerii jakie zwierzęta spotkasz w
+              schronisku.
+            </p>
+            <a href="zwierzeta.html" id="whitebtn1">ZOBACZ GALERIĘ</a>
+          </div>
+          <div class="white-contact  fromLeft" id="white-contact">
+            <h3 id="whiteh22">Przyjedź do schroniska</h3>
+            <p id="whitep2">
+              Po przejrzeniu galerii wiesz co ci się podoba, możesz przyjechać
+              na miejsce i sprawdzić stan zwierząt oraz czy wybrane zwierzę ci
+              pasuje.
+            </p>
+            <a href="adres.html" id="whitebtn2">KONTAKT</a>
+          </div>
+          <div class="white-documents  fromLeft" id="white-documents">
+            <h3 id="whiteh23">Wypełnij dokumenty</h3>
+            <p id="whitep3">
+              Do adopcji potrzebne jest wypełnienie dokumentów.
+            </p>
+            <a href="dokumenty.html" id="whitebtn3">POBIERZ DOKUMENTY</a>
+          </div>
         </div>
+      </div>
     </div>
     <div class="footer">
-        <div class="footer-links">
-            <div class="footer-links-content">
-                <a href="index.html"><img src="Images/logo-header3.png" id="img"></a>
-                <div class="footer-links-content-left">
-                    <p id="footerp1">Firma</p>
-                    <a href="informacja.html" id="footerp1a1">Informacje</a>
-                    <a href="praca.html" id="footerp1a2">Praca</a>
-                    <a href="kontakt.html" id="footerp1a3">Kontakt</a>
-                </div>
-                <div class="footer-links-content-middle">
-                    <p id="footerp2">Społeczności</p>
-                    <a href="pracownicy.html" id="footerp2a1">Pracownicy</a>
-                    <a href="sponsorzy.html" id="footerp2a2">Sponsorzy</a>
-                    <a href="dostawcy.html" id="footerp2a3">Dostawcy</a>
-                </div>
-                <div class="footer-links-content-right">
-                    <p id="footerp3">Nie wiem</p>
-                    <a href="cos1.html" id="footerp3a1">Cos1</a>
-                    <a href="cos2.html" id="footerp3a2">Cos2</a>
-                    <a href="cos3.html" id="footerp3a3">Cos3</a>
-                </div>
-            </div>
+      <div class="footer-links">
+        <div class="footer-links-content">
+          <a href="index.html"><img src="Images/logo-header3.png" id="img"/></a>
+          <div class="footer-links-content-left">
+            <p id="footerp1">Firma</p>
+            <a href="informacja.html" id="footerp1a1">Informacje</a>
+            <a href="praca.html" id="footerp1a2">Praca</a>
+            <a href="kontakt.html" id="footerp1a3">Kontakt</a>
+          </div>
+          <div class="footer-links-content-middle">
+            <p id="footerp2">Społeczności</p>
+            <a href="pracownicy.html" id="footerp2a1">Pracownicy</a>
+            <a href="sponsorzy.html" id="footerp2a2">Sponsorzy</a>
+            <a href="dostawcy.html" id="footerp2a3">Dostawcy</a>
+          </div>
+          <div class="footer-links-content-right">
+            <p id="footerp3">Nie wiem</p>
+            <a href="cos1.html" id="footerp3a1">Cos1</a>
+            <a href="cos2.html" id="footerp3a2">Cos2</a>
+            <a href="cos3.html" id="footerp3a3">Cos3</a>
+          </div>
         </div>
-        <div class="datetime">
-            <div class="datetimeinfo">
-                <p id="localeText"></p>
-                <p id="locale"></p>
-            </div>
-            <div class="datetimeinfo">
-                <p id="actualDateText"></p>
-                <p id="actualDate"></p>
-            </div>
-            <div class="datetimeinfo">
-                <p id="actualTimeText"></p>
-                <p id="actualTime"></p>
-            </div>
+      </div>
+      <div class="datetime">
+        <div class="datetimeinfo">
+          <p id="localeText"></p>
+          <p id="locale"></p>
         </div>
-        <div class="footer-sponsors">
-            <a href="sponsorzy.html"><img src="Images/sponsorzy.png"></a>
-            <a href="sponsorzy.html"><img src="Images/sponsorzy1.png"></a>
-            <a href="sponsorzy.html"><img src="Images/sponsorzy2.png"></a>
-            <a href="sponsorzy.html"><img src="Images/sponsorzy3.png"></a>
+        <div class="datetimeinfo">
+          <p id="actualDateText"></p>
+          <p id="actualDate"></p>
         </div>
+        <div class="datetimeinfo">
+          <p id="actualTimeText"></p>
+          <p id="actualTime"></p>
+        </div>
+      </div>
+      <div class="footer-sponsors">
+        <a href="sponsorzy.html"><img src="Images/sponsorzy.png"/></a>
+        <a href="sponsorzy.html"><img src="Images/sponsorzy1.png"/></a>
+        <a href="sponsorzy.html"><img src="Images/sponsorzy2.png"/></a>
+        <a href="sponsorzy.html"><img src="Images/sponsorzy3.png"/></a>
+      </div>
     </div>
-    <div id="cookies">
-        <div id="cookies-content">
-            <p id="cookies">Ta strona korzysta z ciasteczek, dalsze korzystanie z niej oznacza zgodę na ich używanie. </p>
-            <div id="button"><button onclick="closeCookies()" id="cookiesbutton">Zamknij</button></div>
+    <div id="cookies-wrap">
+      <div id="cookies-content">
+        <p id="cookies">
+          Ta strona korzysta z ciasteczek, dalsze korzystanie z niej oznacza
+          zgodę na ich używanie.
+        </p>
+        <div id="cookiesbtn">
+          <button type="button" onclick="closeCookies()" id="cookiesbutton">
+            Zamknij
+          </button>
         </div>
+      </div>
     </div>
     <script>
-        //Labels 
-        const languages = {
-            pl: {
-                menu1: "Adopcja",
-                menu2: "Zwierzęta",
-                menu3: "Jak pomóc",
-                menu4: "Kampanie",
-                menu5: "Kontakt",
-                menu11: "Poradnik",
-                menu12: "Koszty",
-                menu13: "Warunki",
-                menu21: "Lista zwierząt",
-                menu31: "Pomoc materialna",
-                menu32: "Pomoc finansowa",
-                menu33: "Wolontariat",
-                day: "Dzień",
-                night: "Noc",
-                gradienth1: "Schronisko dla Bezdomnych Zwierząt we Wrocławiu",
-                gradientp: "Schronisko dla Bezdomnych Zwierząt we Wrocławiu powstało w 1962 roku. Założyli je, wkładając w to wielką pracę i entuzjazm działacze Towarzystwa Opieki nad Zwierzętami we Wrocławiu.",
-                gradientbtn: "Wyświetl więcej informacji",
-                whiteh1: "Proces adopcji",
-                whiteh21: "Sprawdź galerię",
-                whiteh22: "Przyjedź do schroniska",
-                whiteh23: "Wypełnij dokumenty",
-                whitep1: "Przed przyjazdem zobacz w galerii jakie zwierzęta spotkasz w schronisku.",
-                whitep2: "Po przejrzeniu galerii wiesz co ci się podoba, możesz przyjechać na miejsce i sprawdzić stan zwierząt oraz czy wybrane zwierzę ci pasuje.",
-                whitep3: "Do adopcji potrzebne jest wypełnienie dokumentów.",
-                whitebtn1: "Zobacz galerię",
-                whitebtn2: "Kontakt",
-                whitebtn3: "Pobierz dokumenty",
-                footerp1: "Firma",
-                footerp2: "Społeczności",
-                footerp3: "Nie wiem",
-                footerp1a1: "Informacje",
-                footerp1a2: "Praca",
-                footerp1a3: "Kontakt",
-                footerp2a1: "Pracownicy",
-                footerp2a2: "Sponsorzy",
-                footerp2a3: "Dostawcy",
-                footerp3a1: "Cos1",
-                footerp3a2: "Cos2",
-                footerp3a3: "Cos3",
-                localeText: "Format dla: ",
-                actualDateText: "Dzisiejsza data: ",
-                actualTimeText: "Aktualna godzina: ",
-                cookies: "Ta strona korzysta z ciasteczek, dalsze korzystanie z niej oznacza zgodę na ich używanie.",
-                cookiesbutton: "Zamknij",
-            },
-            en: {
-                menu1: "Adoption",
-                menu2: "Animals",
-                menu3: "How to help",
-                menu4: "Campaigns",
-                menu5: "Contact",
-                menu11: "Guide",
-                menu12: "Expenses",
-                menu13: "Conditions",
-                menu21: "List of animals",
-                menu31: "Material support",
-                menu32: "Financial support",
-                menu33: "Volunteering",
-                day: "Day",
-                night: "Night",
-                gradienth1: "Shelter for homeless animals in Wroclaw",
-                gradientp: "Shelter for homeless animals in Wroclaw was made in 1962. Activists from Animal Protection Society founded it putting a lot of work and enthusiasm in it.",
-                gradientbtn: "Show more info",
-                whiteh1: "Adoption process",
-                whiteh21: "Show gallery",
-                whiteh22: "Come over to the shelter",
-                whiteh23: "Fill out the documents",
-                whitep1: "Check animals we have before your arrival",
-                whitep2: "You already know our offer so you can come over, inspect our animals condition and check if any animal suits you.",
-                whitep3: "Fill out the documents to adopt an animal.",
-                whitebtn1: "Show gallery",
-                whitebtn2: "Contact",
-                whitebtn3: "Download documents",
-                footerp1: "Business",
-                footerp2: "Socials",
-                footerp3: "Dunno",
-                footerp1a1: "Info",
-                footerp1a2: "Job",
-                footerp1a3: "Contact",
-                footerp2a1: "Employees",
-                footerp2a2: "Sponsors",
-                footerp2a3: "Providers",
-                footerp3a1: "Smh1",
-                footerp3a2: "Smh2",
-                footerp3a3: "Smh3",
-                localeText: "Format for: ",
-                actualDateText: "Date: ",
-                actualTimeText: "Current time: ",
-                cookies: "This site uses cookies, further use indicates your agreement.",
-                cookiesbutton: "Close",
-            }
+      //Labels
+      const languages = {
+        pl: {
+          menu1: " Adopcja",
+          menu2: "Zwierzęta",
+          menu3: "Jak pomóc",
+          menu4: "Kampanie",
+          menu5: "Kontakt",
+          menu11: "Poradnik",
+          menu12: "Koszty",
+          menu13: "Warunki",
+          menu21: "Lista zwierząt",
+          menu31: "Pomoc materialna",
+          menu32: "Pomoc finansowa",
+          menu33: "Wolontariat",
+          day: "Dzień",
+          night: "Noc",
+          gradienth1: "Schronisko dla Bezdomnych Zwierząt we Wrocławiu",
+          gradientp:
+            "Schronisko dla Bezdomnych Zwierząt we Wrocławiu powstało w 1962 roku. Założyli je, wkładając w to wielką pracę i entuzjazm działacze Towarzystwa Opieki nad Zwierzętami we Wrocławiu.",
+          gradientbtn: "Wyświetl więcej informacji",
+          whiteh1: "Proces adopcji",
+          whiteh21: "Sprawdź galerię",
+          whiteh22: "Przyjedź do schroniska",
+          whiteh23: "Wypełnij dokumenty",
+          whitep1:
+            "Przed przyjazdem zobacz w galerii jakie zwierzęta spotkasz w schronisku.",
+          whitep2:
+            "Po przejrzeniu galerii wiesz co ci się podoba, możesz przyjechać na miejsce i sprawdzić stan zwierząt oraz czy wybrane zwierzę ci pasuje.",
+          whitep3: "Do adopcji potrzebne jest wypełnienie dokumentów.",
+          whitebtn1: "Zobacz galerię",
+          whitebtn2: "Kontakt",
+          whitebtn3: "Pobierz dokumenty",
+          footerp1: "Firma",
+          footerp2: "Społeczności",
+          footerp3: "Nie wiem",
+          footerp1a1: "Informacje",
+          footerp1a2: "Praca",
+          footerp1a3: "Kontakt",
+          footerp2a1: "Pracownicy",
+          footerp2a2: "Sponsorzy",
+          footerp2a3: "Dostawcy",
+          footerp3a1: "Cos1",
+          footerp3a2: "Cos2",
+          footerp3a3: "Cos3",
+          localeText: "Format dla: ",
+          actualDateText: "Dzisiejsza data: ",
+          actualTimeText: "Aktualna godzina: ",
+          cookies:
+            "Ta strona korzysta z ciasteczek, dalsze korzystanie z niej oznacza zgodę na ich używanie.",
+          cookiesbutton: "Zamknij"
+        },
+        en: {
+          menu1: "Adoption",
+          menu2: "Animals",
+          menu3: "How to help",
+          menu4: "Campaigns",
+          menu5: "Contact",
+          menu11: "Guide",
+          menu12: "Expenses",
+          menu13: "Conditions",
+          menu21: "List of animals",
+          menu31: "Material support",
+          menu32: "Financial support",
+          menu33: "Volunteering",
+          day: "Day",
+          night: "Night",
+          gradienth1: "Shelter for homeless animals in Wroclaw",
+          gradientp:
+            "Shelter for homeless animals in Wroclaw was made in 1962. Activists from Animal Protection Society founded it putting a lot of work and enthusiasm in it.",
+          gradientbtn: "Show more info",
+          whiteh1: "Adoption process",
+          whiteh21: "Show gallery",
+          whiteh22: "Come over to the shelter",
+          whiteh23: "Fill in the documents",
+          whitep1: "Check our animals before your arrival",
+          whitep2:
+            "You already know our offer so you can come over, inspect our animals condition and check if any animal suits you.",
+          whitep3: "Fill out the documents to adopt an animal.",
+          whitebtn1: "Show gallery",
+          whitebtn2: "Contact",
+          whitebtn3: "Download documents",
+          footerp1: "Business",
+          footerp2: "Socials",
+          footerp3: "Dunno",
+          footerp1a1: "Info",
+          footerp1a2: "Job",
+          footerp1a3: "Contact",
+          footerp2a1: "Employees",
+          footerp2a2: "Sponsors",
+          footerp2a3: "Providers",
+          footerp3a1: "Smh1",
+          footerp3a2: "Smh2",
+          footerp3a3: "Smh3",
+          localeText: "Format for: ",
+          actualDateText: "Date: ",
+          actualTimeText: "Current time: ",
+          cookies:
+            "This site uses cookies, further use indicates your agreement.",
+          cookiesbutton: "Close"
         }
-
-        const toBeTranslated = ["menu1", "menu2", "menu2", "menu3", "menu4", "menu5", "menu11", "menu12", "menu13", "menu21", "menu31", "menu32", "menu33", "gradienth1", "gradientp", "gradientbtn", "whiteh1", "whiteh21", "whiteh22", "whiteh23", "whitep1", "whitep2", "whitep3", "whitebtn1", "whitebtn2", "whitebtn3", "footerp1", "footerp2", "footerp3", "footerp1a1", "footerp1a2", "footerp1a3", "footerp2a1", "footerp2a2", "footerp2a3", "footerp3a1", "footerp3a2", "footerp3a3", "cookies", "localeText", "actualDateText", "actualTimeText"];
-        // end labels
-        window.onscroll = function() {
-            changeBg();
-        };
-        window.onload = function() {
-            moveArrow();
-        }
-        if (localStorage.getItem('language') === undefined || localStorage.getItem('language') === null) {
-            var deflang = navigator.language;
-            if (deflang !== "pl") {
-                changeLangEn();
-            } else {
-                changeLangPl();
-            }
-        }
-
-        function changeBg() {
-            if (document.documentElement.scrollTop > 50) {
-                document.getElementById("banner").className = "scrolled";
-            } else {
-                document.getElementById("banner").className = "banner";
-            }
-        };
-
-        if (localStorage.getItem('localSwitch') === undefined || localStorage.getItem('localSwitch') === null) {
-            var date = new Date();
-            var time = date.getHours();
-            if (time >= 7 && time <= 20) {
-                document.getElementById("switch").checked = "";
-                nightMode();
-            } else {
-                document.getElementById("switch").checked = "checked";
-                nightMode();
-            };
-        };
-
-        function nightMode() {
-            var isChecked = document.getElementById("switch").checked;
-            if (isChecked === true) {
-                document.getElementById("light-mode").className = "dark-mode";
-                document.getElementById("savedDayTime").innerHTML = "";
-                if (localStorage.getItem('language') === "PL") {
-                    document.getElementById("savedDayTime").innerHTML = "Noc";
-                } else {
-                    document.getElementById("savedDayTime").innerHTML = "Night";
-                }
-            } else {
-                document.getElementById("light-mode").classList.remove("dark-mode");
-                document.getElementById("savedDayTime").innerHTML = "";
-                if (localStorage.getItem('language') === "PL") {
-                    document.getElementById("savedDayTime").innerHTML = "Dzień";
-                } else {
-                    document.getElementById("savedDayTime").innerHTML = "Day";
-                }
-            }
-
-            localStorage.setItem('localSwitch', isChecked);
-        };
-
-        var mode = localStorage.getItem('localSwitch');
-        if (mode === "true") {
-            document.getElementById("switch").checked = "checked";
-            nightMode();
+      };
+      const toBeTranslated = [
+        "menu1",
+        "menu2",
+        "menu2",
+        "menu3",
+        "menu4",
+        "menu5",
+        "menu11",
+        "menu12",
+        "menu13",
+        "menu21",
+        "menu31",
+        "menu32",
+        "menu33",
+        "gradienth1",
+        "gradientp",
+        "gradientbtn",
+        "whiteh1",
+        "whiteh21",
+        "whiteh22",
+        "whiteh23",
+        "whitep1",
+        "whitep2",
+        "whitep3",
+        "whitebtn1",
+        "whitebtn2",
+        "whitebtn3",
+        "footerp1",
+        "footerp2",
+        "footerp3",
+        "footerp1a1",
+        "footerp1a2",
+        "footerp1a3",
+        "footerp2a1",
+        "footerp2a2",
+        "footerp2a3",
+        "footerp3a1",
+        "footerp3a2",
+        "footerp3a3",
+        "cookies",
+        "cookiesbutton",
+        "localeText",
+        "actualDateText",
+        "actualTimeText"
+      ]; // end labels
+      if (window.screen.width > 1024) {
+        window.onscroll = changeBg;
+      }
+      window.onload = moveArrow;
+      if (window.screen.width < 1024) {
+        document.getElementById("banner").className = "scrolled";
+      }
+      if (
+        localStorage.getItem("language") === undefined ||
+        localStorage.getItem("language") === null
+      ) {
+        let deflang = navigator.language;
+        if (deflang !== "pl") {
+          changeLangEn();
         } else {
-            document.getElementById("switch").checked = "";
-            nightMode();
-        };
+          changeLangPl();
+        }
+      }
 
-        var date = new Date();
-
-        window.addEventListener("load", time);
-
-        function time() {
-            var date = new Date();
-            document.getElementById("actualDate").innerHTML = date.toLocaleDateString();
-            document.getElementById("actualTime").innerHTML = date.toLocaleTimeString();
-            document.getElementById('locale').innerHTML = navigator.language.toUpperCase();
-        };
-        setInterval(time, 1000);
-
-        function closeCookies() {
-            document.getElementById("cookies").className = "hidden";
-            localStorage.setItem('acceptCookies', "true");
-        };
-        var accept = localStorage.getItem('acceptCookies');
-        if (accept === "true") {
-            document.getElementById("cookies").className = "hidden";
-        };
-
-
-        function changeLangPl() {
-            document.getElementById("en").classList.remove("en");
-            document.getElementById("pl").className = "pl";
-            localStorage.setItem('language', "PL");
-            translateAll(languages.pl);
-            nightMode();
-        };
-
-        function translateAll(targetLanguage) {
-            for (var x of toBeTranslated) {
-                document.getElementById(x).textContent = targetLanguage[x];
-            }
-        };
-
-        function changeLangEn() {
-            document.getElementById("pl").classList.remove("pl");
-            document.getElementById("en").className = "en";
-            localStorage.setItem('language', "EN");
-            translateAll(languages.en);
-            nightMode();
-        };
-
-        var language = localStorage.getItem('language');
-        if (language === "EN") {
-            changeLangEn();
+      function changeBg() {
+        if (document.documentElement.scrollTop > 60) {
+          document.getElementById("banner").className = "scrolled";
         } else {
-            changeLangPl();
-        };
-
-        var arrow = true;
-        var downarrow = document.getElementById("downarrow");
-
-        function moveArrowDown() {
-            document.getElementById("downarrow").classList.remove("downarrowUp");
-            downarrow.className = "downarrowDown";
-            var arrow = false;
-            setTimeout('moveArrowUp();', 500);
+          let bgColor = document.documentElement.scrollTop / 100;
+          document.getElementById("banner").style.background =
+            "rgba(0, 0, 0," + bgColor + ")";
+          document.getElementById("banner").className = "banner";
         }
+      }
 
-        function moveArrowUp() {
-            document.getElementById("downarrow").classList.remove("downarrowDown");
-            downarrow.className = "downarrowUp";
-            var arrow = true;
-            setTimeout('moveArrowDown();', 500);
+      if (
+        localStorage.getItem("localSwitch") === undefined ||
+        localStorage.getItem("localSwitch") === null
+      ) {
+        let date = new Date();
+        let time = date.getHours();
+        if (time >= 7 && time <= 20) {
+          document.getElementById("switch").checked = "";
+          nightMode();
+        } else {
+          document.getElementById("switch").checked = "checked";
+          nightMode();
         }
+      }
 
-        function moveArrow() {
-            if (arrow) {
-                moveArrowDown()
-            } else {
-                moveArrowUp();
-            }
+      function nightMode() {
+        let isChecked = document.getElementById("switch").checked;
+        if (isChecked === true) {
+          document.getElementById("light-mode").className = "dark-mode";
+          document.getElementById("savedDayTime").innerHTML = "";
+          if (localStorage.getItem("language") === "PL") {
+            document.getElementById("savedDayTime").innerHTML = "Noc";
+          } else {
+            document.getElementById("savedDayTime").innerHTML = "Night";
+          }
+        } else {
+          document.getElementById("light-mode").classList.remove("dark-mode");
+          document.getElementById("savedDayTime").innerHTML = "";
+          if (localStorage.getItem("language") === "PL") {
+            document.getElementById("savedDayTime").innerHTML = "Dzień";
+          } else {
+            document.getElementById("savedDayTime").innerHTML = "Day";
+          }
         }
+        localStorage.setItem("localSwitch", isChecked);
+      }
+      let mode = localStorage.getItem("localSwitch");
+      if (mode === "true") {
+        document.getElementById("switch").checked = "checked";
+        nightMode();
+      } else {
+        document.getElementById("switch").checked = "";
+        nightMode();
+      }
+      let date = new Date();
+      window.addEventListener("load", time);
 
-        function scrollDown() {
-            var heightGradient = document.getElementById("gradient").offsetHeight;
-            var heightBanner = document.getElementById("banner-logo").offsetHeight;
-            window.scrollTo({
-                top: heightGradient - heightBanner,
-                behavior: 'smooth'
-            })
+      function time() {
+        let date = new Date();
+        document.getElementById(
+          "actualDate"
+        ).innerHTML = date.toLocaleDateString();
+        document.getElementById(
+          "actualTime"
+        ).innerHTML = date.toLocaleTimeString();
+        document.getElementById(
+          "locale"
+        ).innerHTML = navigator.language.toUpperCase();
+      }
+      setInterval(time, 1000);
+
+      function closeCookies() {
+        localStorage.setItem("acceptCookies", "true");
+        document.getElementById("cookies-wrap").style.display = "none";
+      }
+      let accept = localStorage.getItem("acceptCookies");
+      if (accept === "true") {
+        document.getElementById("cookies-wrap").style.display = "none";
+      }
+
+      function changeLangPl() {
+        document.getElementById("en").classList.remove("en");
+        document.getElementById("pl").className = "pl";
+        localStorage.setItem("language", "PL");
+        translateAll(languages.pl);
+        nightMode();
+      }
+
+      function translateAll(targetLanguage) {
+        for (let x of toBeTranslated) {
+          document.getElementById(x).textContent = targetLanguage[x];
         }
+      }
 
+      function changeLangEn() {
+        document.getElementById("pl").classList.remove("pl");
+        document.getElementById("en").className = "en";
+        localStorage.setItem("language", "EN");
+        translateAll(languages.en);
+        nightMode();
+      }
+      let language = localStorage.getItem("language");
+      if (language === "EN") {
+        changeLangEn();
+      } else {
+        changeLangPl();
+      }
+      let arrow = true;
+      let downarrow = document.getElementById("downarrow");
+
+      function moveArrowDown() {
+        document.getElementById("downarrow").classList.remove("downarrowUp");
+        downarrow.className = "downarrowDown";
+        let arrow = false;
+        setTimeout("moveArrowUp();", 500);
+      }
+
+      function moveArrowUp() {
+        document.getElementById("downarrow").classList.remove("downarrowDown");
+        downarrow.className = "downarrowUp";
+        let arrow = true;
+        setTimeout("moveArrowDown();", 500);
+      }
+
+      function moveArrow() {
+        if (arrow) {
+          moveArrowDown();
+        } else {
+          moveArrowUp();
+        }
+      }
+
+      function scrollDown() {
+        let heightGradient = document.getElementById("gradient").offsetHeight;
+        let heightBanner = document.getElementById("banner-logo").offsetHeight;
+        window.scrollTo({
+          top: heightGradient - heightBanner,
+          behavior: "smooth"
+        });
+      }
+
+      function openMobileMenu() {
+        if (
+          document
+            .getElementById("mobileMenu")
+            .classList.contains("mobileMenuOpened")
+        ) {
+          document
+            .getElementById("mobileMenu")
+            .classList.remove("mobileMenuOpened");
+          document.getElementById("mobileMenuContent").style.display = "none";
+        } else {
+          document.getElementById("mobileMenu").className = "mobileMenuOpened";
+          document.getElementById("mobileMenuContent").style.display = "block";
+        }
+      }
+      const randomNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+      for (i = 0; i < 6; i++) {
+        getRandomPictures();
+      }
+      //window.onload = getRandomPictures;
+      //let count = 0;
+      function getRandomPictures() {
+        const picsContener = document.getElementById("pics-contener");
+        let randomNumber =
+          randomNumbers[Math.floor(Math.random() * randomNumbers.length)];
+        for (let i = 0; i < randomNumbers.length; i++) {
+          if (randomNumbers[i] === randomNumber) {
+            randomNumbers.splice(i, 1);
+          }
+        }
+        const src = `Images/${randomNumber}.jpg`;
+        let image = document.createElement("img");
+        image.setAttribute("src", src);
+        image.setAttribute("class", "hideImage");
+        picsContener.appendChild(image);
+        setTimeout(function() {
+          image.removeAttribute("class", "hideImage");
+        }, 100);
+        /*
+        count++;
+        if (count < 6) {
+          setTimeout(getRandomPictures, 500);
+        }
+        */
+      }
     </script>
-</body>
-
+  </body>
 </html>

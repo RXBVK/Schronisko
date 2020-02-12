@@ -52,6 +52,8 @@
             </ol>
         </div>
     </div>
+    <div id="display-wrap" onclick="closeDisplay()">
+    </div>
     <div class="zwierzeta-header">
         <div class="zwierzeta-header-content">
             Galeria zwierząt
@@ -60,136 +62,142 @@
     <div class="filter">
         <div class="filter-content">
             <div class="filter-options">
-                Psy <input type="checkbox" id="dogs" onclick="filtruj()">
-                Koty <input type="checkbox" id="cats" onclick="filtruj()">
+                Psy <input type="checkbox" id="dogs" onclick="handleFiltering()">
+                Koty <input type="checkbox" id="cats" onclick="handleFiltering()">
             </div>
             <div class="search">
                 Wpisz imię: <input type="text" id="imie">
             </div>
         </div>
     </div>
-    <div class="zwierzeta-gallery" id="gallery">
-        <div id="barney" class="cat">
-            <img src="Images/1.jpg" class="img">
-            <div class="img-bg">
-                <div class="img-bg-content">
-                    <div id="img-bg-content-imie">BARNEY</div>
-                    <div id="img-bg-content-wiek"> Wiek: 3 lata</div>
-                </div>
-            </div>
-        </div>
-        <div id="barry">
-            <img src="Images/2.jpg" class="img">
-            <div class="img-bg">
-                <div class="img-bg-content">
-                    <div id="img-bg-content-imie">BARRY</div>
-                    <div id="img-bg-content-wiek"> Wiek: 8 lat</div>
-                </div>
-            </div>
-        </div>
-        <div id="goofy">
-            <img src="Images/3.jpg" class="img">
-            <div class="img-bg">
-                <div class="img-bg-content">
-                    <div id="img-bg-content-imie">GOOFY</div>
-                    <div id="img-bg-content-wiek"> Wiek: 2 lata</div>
-                </div>
-            </div>
-        </div>
-        <div id="benji">
-            <img src="Images/4.jpg" class="img">
-            <div class="img-bg">
-                <div class="img-bg-content">
-                    <div id="img-bg-content-imie">BENJI</div>
-                    <div id="img-bg-content-wiek"> Wiek: 10 lat</div>
-                </div>
-            </div>
-        </div>
-        <div id="boo">
-            <img src="Images/5.jpg" class="img">
-            <div class="img-bg">
-                <div class="img-bg-content">
-                    <div id="img-bg-content-imie">BOO</div>
-                    <div id="img-bg-content-wiek"> Wiek: 9 lat</div>
-                </div>
-            </div>
-        </div>
-        <div id="max">
-            <img src="Images/6.jpg" class="img">
-            <div class="img-bg">
-                <div class="img-bg-content">
-                    <div id="img-bg-content-imie">MAX</div>
-                    <div id="img-bg-content-wiek"> Wiek: 13 lat</div>
-                </div>
-            </div>
-        </div>
-        <div id="charlie">
-            <img src="Images/7.jpg" class="img">
-            <div class="img-bg">
-                <div class="img-bg-content">
-                    <div id="img-bg-content-imie">CHARLIE</div>
-                    <div id="img-bg-content-wiek"> Wiek: 6 lat</div>
-                </div>
-            </div>
-        </div>
-        <div id="molly">
-            <img src="Images/8.jpg" class="img">
-            <div class="img-bg">
-                <div class="img-bg-content">
-                    <div id="img-bg-content-imie">MOLLY</div>
-                    <div id="img-bg-content-wiek"> Wiek: 1 rok</div>
-                </div>
-            </div>
-        </div>
-        <div id="jack">
-            <img src="Images/9.jpg" class="img">
-            <div class="img-bg">
-                <div class="img-bg-content">
-                    <div id="img-bg-content-imie">JACK</div>
-                    <div id="img-bg-content-wiek"> Wiek: 8 lat</div>
-                </div>
-            </div>
-        </div>
-        <div id="ruby">
-            <img src="Images/10.jpg" class="img">
-            <div class="img-bg">
-                <div class="img-bg-content">
-                    <div id="img-bg-content-imie">RUBY</div>
-                    <div id="img-bg-content-wiek"> Wiek: 2 lata</div>
-                </div>
-            </div>
-        </div>
-        <div id="toby">
-            <img src="Images/11.jpg" class="img">
-            <div class="img-bg">
-                <div class="img-bg-content">
-                    <div id="img-bg-content-imie">TOBY</div>
-                    <div id="img-bg-content-wiek"> Wiek: 3 miesiące</div>
-                </div>
-            </div>
-        </div>
-        <div id="bailey">
-            <img src="Images/12.jpg" class="img">
-            <div class="img-bg">
-                <div class="img-bg-content">
-                    <div id="img-bg-content-imie">BAILEY</div>
-                    <div id="img-bg-content-wiek"> Wiek: 4 lata</div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="zwierzeta-gallery" id="gallery"></div>
     <script>
-        const names = ["barney", "barry", "goofy", "benji", "boo", "max", "charlie", "molly", "jack", "ruby", "toby", "bailey"];
-        const namesDogs = ["barry", "goofy", "benji", "boo", "max", "charlie", ];
-        const namesCats = ["barney", "molly", "jack", "ruby", "toby", "bailey"];
-        window.onscroll = function() {
-            changeBg();
-        };
-        window.onload = function() {
-            checkedFilter();
+        const myAnimals = [{
+                name: "Molly",
+                type: "cat",
+                age: "3",
+                imagePath: "Images/1.jpg",
+            },
+            {
+                name: "Goofy",
+                type: "dog",
+                age: "7",
+                imagePath: "Images/2.jpg"
+            },
+            {
+                name: "Benji",
+                type: "dog",
+                age: "6",
+                imagePath: "Images/3.jpg",
+            },
+            {
+                name: "Boo",
+                type: "dog",
+                age: "9",
+                imagePath: "Images/4.jpg",
+            },
+            {
+                name: "Max",
+                type: "dog",
+                age: "10",
+                imagePath: "Images/5.jpg",
+            },
+            {
+                name: "Charlie",
+                type: "dog",
+                age: "13",
+                imagePath: "Images/6.jpg",
+            },
+            {
+                name: "Barry",
+                type: "dog",
+                age: "7",
+                imagePath: "Images/7.jpg"
+            },
+            {
+                name: "Ruby",
+                type: "cat",
+                age: "4",
+                imagePath: "Images/8.jpg"
+            },
+            {
+                name: "Jack",
+                type: "cat",
+                age: "9",
+                imagePath: "Images/9.jpg"
+            },
+            {
+                name: "Bailey",
+                type: "cat",
+                age: "3",
+                imagePath: "Images/10.jpg"
+            },
+            {
+                name: "Toby",
+                type: "cat",
+                age: "1",
+                imagePath: "Images/11.jpg"
+            },
+            {
+                name: "Chloe",
+                type: "cat",
+                age: "2",
+                imagePath: "Images/12.jpg"
+            },
+        ];
+
+        function createAnimalsElements(animalsList) {
+            const gallery = document.getElementById("gallery");
+            gallery.innerHTML = '';
+            animalsList.forEach(animal => {
+                const element = document.createElement("div");
+                const element2 = document.createElement("div");
+                const element3 = document.createElement("div");
+                const element4 = document.createElement("div");
+                const element5 = document.createElement("div");
+                const element6 = document.createElement("div");
+                element.setAttribute("id", animal.name.toLowerCase());
+                const image = document.createElement("img");
+                image.setAttribute("src", animal.imagePath);
+                image.setAttribute("class", "img");
+                element2.setAttribute("class", "img-bg");
+                element3.setAttribute("class", "img-bg-content");
+                element4.setAttribute("class", "img-bg-content-imie");
+                element5.setAttribute("class", "img-bg-content-wiek");
+                element5.setAttribute("class", "img-src");
+                element4.textContent = animal.name.toUpperCase();
+                element5.textContent = "Wiek: " + animal.age.toUpperCase() + " lata";
+
+                element.appendChild(element6);
+                element6.appendChild(image);
+                element.appendChild(element2);
+                element2.appendChild(element3);
+                element3.appendChild(element4);
+                element3.appendChild(element5);
+                gallery.appendChild(element);
+            });
         }
-        document.getElementById("imie").onkeyup = function() {
-            searchOnKey();
+        createAnimalsElements(myAnimals);
+
+        window.onscroll = changeBg
+        window.onload = checkedFilter;
+
+        document.getElementById("imie").onkeyup = handleFiltering;
+
+        function handleFiltering() {
+            const shouldShowDogs = document.getElementById("dogs").checked;
+            const shouldShowCats = document.getElementById("cats").checked;
+            const enteredName = document.getElementById("imie").value;
+
+            const animalsToShow = new Array();
+            myAnimals.forEach(animal => {
+                const meetsTypeCriteria = (shouldShowDogs && animal.type === "dog") || (shouldShowCats && animal.type === "cat")
+                const meetsNameCriteria = (enteredName.length === 0) || (animal.name.toLowerCase().startsWith(enteredName.toLowerCase()));
+                if (meetsTypeCriteria && meetsNameCriteria) {
+                    animalsToShow.push(animal);
+                }
+            });
+            createAnimalsElements(animalsToShow);
         }
 
         function changeBg() {
@@ -211,99 +219,66 @@
                 nightMode();
             };
         };
+        /*
+                function nightMode() {
+                    var isChecked = document.getElementById("switch").checked;
+                    if (isChecked === true) {
+                        document.getElementById("light-mode").className = "dark-mode";
+                        document.getElementById("savedDayTime").innerHTML = "";
+                        document.getElementById("savedDayTime").innerHTML = "Noc";
+                    } else {
+                        document.getElementById("light-mode").classList.remove("dark-mode");
+                        document.getElementById("savedDayTime").innerHTML = "";
+                        document.getElementById("savedDayTime").innerHTML = "Dzień";
+                    }
 
-        function nightMode() {
-            var isChecked = document.getElementById("switch").checked;
-            if (isChecked === true) {
-                document.getElementById("light-mode").className = "dark-mode";
-                document.getElementById("savedDayTime").innerHTML = "";
-                document.getElementById("savedDayTime").innerHTML = "Noc";
-            } else {
-                document.getElementById("light-mode").classList.remove("dark-mode");
-                document.getElementById("savedDayTime").innerHTML = "";
-                document.getElementById("savedDayTime").innerHTML = "Dzień";
-            }
+                    localStorage.setItem('localSwitch', isChecked);
+                };
 
-            localStorage.setItem('localSwitch', isChecked);
-        };
-
-        var mode = localStorage.getItem('localSwitch');
-        if (mode === "true") {
-            document.getElementById("switch").checked = "checked";
-            nightMode();
-        } else {
-            document.getElementById("switch").checked = "";
-            nightMode();
-        };
-
+                var mode = localStorage.getItem('localSwitch');
+                if (mode === "true") {
+                    document.getElementById("switch").checked = "checked";
+                    nightMode();
+                } else {
+                    document.getElementById("switch").checked = "";
+                    nightMode();
+                };
+        */
         function checkedFilter() {
             document.getElementById("dogs").checked = true;
             document.getElementById("cats").checked = true;
         }
+        var imgBg = document.getElementsByClassName("img-bg");
+        var allImages = document.getElementsByClassName("img");
+        for (i = 0; i < imgBg.length; i++) {
+            imgBg[i].addEventListener("click", showImage, false);
+        }
 
-        function filtruj() {
-            var dogschecked = document.getElementById("dogs").checked;
-            var catschecked = document.getElementById("cats").checked;
-            if (document.getElementById("imie").value.length === 0) {
-                if (dogschecked === true && catschecked === true) {
-                    for (var i = 0; i < names.length; i++) {
-                        document.getElementById(names[i]).style.display = "block";
-                    }
-                } else if (dogschecked === true && catschecked === false) {
-                    for (var i = 0; i < namesDogs.length; i++) {
-                        document.getElementById(namesDogs[i]).style.display = "block";
-                        document.getElementById(namesCats[i]).style.display = "none";
-                    }
-                } else if (dogschecked === false && catschecked === true) {
-                    for (var i = 0; i < namesCats.length; i++) {
-                        document.getElementById(namesCats[i]).style.display = "block";
-                        document.getElementById(namesDogs[i]).style.display = "none";
-                    }
-                } else if (dogschecked === false && catschecked === false) {
-                    for (var i = 0; i < names.length; i++) {
-                        document.getElementById(names[i]).style.display = "none";
-                    }
-                }
-            } else {
-                searchOnKey();
-            }
-        };
+        function showImage() {
+            //console.log("xd");
+            //console.log(this);
+            var parent = this.parentElement;
+            var parentContent = parent.children[0];
+            var imageSrc = parentContent.children[0];
+            var properSrc = imageSrc.src;
+            var child = this.children[0];
+            var name = child.children[0];
+            var age = child.children[1];
+            //console.log(parent);
+            //console.log(name);
+            //console.log(age);
+            console.log(imageSrc);
+            console.log(properSrc);
+            var image = document.createElement("img");
+            image.setAttribute("class", "displayedImage");
+            image.setAttribute("src", properSrc);
+            document.getElementById("display-wrap").innerHTML = "";
+            document.getElementById("display-wrap").appendChild(image);
+            document.getElementById("display-wrap").style.display = "flex";
+        }
 
-        function searchOnKey() {
-            var dogschecked = document.getElementById("dogs").checked;
-            var catschecked = document.getElementById("cats").checked;
-            var name = document.getElementById("imie").value;
-            var properName = name.toLowerCase();
-
-            function check(singleName) {
-                return singleName.startsWith(properName);
-            };
-            if (check.length > 0) {
-                for (var i = 0; i < names.length; i++) {
-                    document.getElementById(names[i]).style.display = "none";
-                }
-                if (dogschecked === true && catschecked === true) {
-                    for (var i = 0; i < names.filter(check).length; i++) {
-                        document.getElementById(names.filter(check)[i]).style.display = "block";
-                    }
-                } else if (dogschecked === true && catschecked === false) {
-                    for (var i = 0; i < namesDogs.filter(check).length; i++) {
-                        document.getElementById(namesDogs.filter(check)[i]).style.display = "block";
-                    }
-                } else if (dogschecked === false && catschecked === true) {
-                    for (var i = 0; i < namesCats.filter(check).length; i++) {
-                        document.getElementById(namesCats.filter(check)[i]).style.display = "block";
-                    }
-                } else if (dogschecked === false && catschecked === false) {
-                    for (var i = 0; i < names.filter(check).length; i++) {
-                        document.getElementById(names.filter(check)[i]).style.display = "none";
-                    }
-                }
-            } else {
-                for (var i = 0; i < names.length; i++) {
-                    document.getElementById(names.filter(check)[i]).style.display = "none";
-                }
-            }
+        function closeDisplay() {
+            document.getElementById("display-wrap").style.display = "none";
         }
 
     </script>
